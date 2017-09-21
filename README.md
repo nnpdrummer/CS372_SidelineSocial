@@ -1,6 +1,7 @@
 # CS372_SidelineSocial
 <br />
-## Week 1 Goals:<br />
+## Week 1 Goals: 
+<br />
 ---
  Ben<br />
     - Design HTML for Thread Page<br />
