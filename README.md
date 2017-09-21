@@ -1,12 +1,12 @@
 # CS372_SidelineSocial
-
-Week 1 Goals:
- Ben 
-    - Design HTML for Thread Page
-    - Design HTML for Board Page
- Chris
-    - Design HTML for Main Page
-    - Design HTML for Register Page
- Ryan
-    - Design HTML for User Profile Page
-    - Design HTML for Admin Profile Page
+<br />
+Week 1 Goals:<br />
+ Ben<br />
+    - Design HTML for Thread Page<br />
+    - Design HTML for Board Page<br />
+ Chris<br />
+    - Design HTML for Main Page<br />
+    - Design HTML for Register Page<br />
+ Ryan<br />
+    - Design HTML for User Profile Page<br />
+    - Design HTML for Admin Profile Page<br />
