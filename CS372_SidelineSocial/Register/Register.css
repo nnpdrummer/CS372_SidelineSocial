@@ -1,0 +1,40 @@
+body {
+    background-image:url(../Images/player.jpeg);
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+}
+    	    
+legend {
+    text-align: left;
+    color: white;}
+    	    
+div {
+    display: block;
+    text-align: center;}
+    
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
+    	    
+label {
+    text-align: right;
+    display: inline-block;
+    width: 135px;
+    color: white;
+    margin-bottom: 15px;}
+    	    
+button {
+    width: 80px; 
+    height: 30px;
+    background-color: #EEEEEE;}
+    	    
+button:hover {
+    background-color: #66AA66;}

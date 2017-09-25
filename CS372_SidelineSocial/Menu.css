@@ -1,0 +1,68 @@
+ul {
+    list-style-type: none;
+    color: white;
+    font-size: 30px;
+    text-align: right;
+}
+
+li {
+    background-color: rgba(0,0,0,0);
+    display:inline-block;
+    padding: 5px;
+    float: left;
+}
+
+li:nth-last-child(1), li:nth-last-child(2), li:nth-last-child(4) {
+    float: none;
+}
+
+li:nth-last-child(3) {
+    float: none;
+    position: relative;
+    left: -35px;
+    bottom: -2px;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+div.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
+    background-image: url(Images/navigation.jpg);
+    background-size: 100% 100%;
+    line-height: 130px;
+}
+
+.search {
+    border-radius: 20px;
+    border: 0px;
+    width: 200px;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.searchButton {
+    width: 13px;
+    height: 13px;
+    background-image: url(Images/search.png);
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
