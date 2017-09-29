@@ -2,3 +2,129 @@ body {
     width: 1345px;
     background-color: #DFDFDF;
 }
+
+.main_content {
+    margin-left: 5%;
+    margin-right: 5%;
+    border-style: solid;
+    border-color: black;
+    box-shadow: 3px 3px 5px #777777;
+    padding: .1%;
+    background-color: black;
+    border-radius: 7px;
+    width: 60%;
+    float: left;
+}
+
+h1 {
+   font-size: 300%;
+   text-align: center;
+   margin-bottom: 0%;
+}
+
+h3 {
+    font-size: 100%;
+    text-align: center;
+}
+
+p {
+    font-size: medium;
+    padding-left: 45px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: #AA4444;
+    font-size: x-large;
+    color: white;
+}
+
+#topic {
+    width: 70%;
+}
+
+tr {
+    background-color: #ffbdb5;
+}
+
+tr:hover, #even:hover {
+    background-color:#e2ffe6;
+}
+
+#even {
+    background-color: #ffefed;
+}
+
+td {
+    padding-top: 20px;
+    padding-left: 5px;
+    font-size: large;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table a {
+    color: black;    
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: x-large;
+    padding-bottom: 0%;
+}
+
+table a:visited {
+    color: #8c8c8c;
+    /*color: #474545;*/
+}
+
+aside {
+    border-style: solid;
+    border-color: black;
+    box-shadow: 3px 3px 5px #777777;
+    padding: .1%;
+    background-color: #AA4444;
+    border-radius: 7px;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+    width: 20%;
+    margin-right: 5%;
+    float: right;
+}
+
+aside p {
+    padding-left: 0px;
+    font-size: medium;
+    font-weight: normal;
+    text-align: left;
+}
+
+aside ul {
+    font-size: medium;
+    font-weight: normal;
+    text-align: left;
+}
+
+section {
+    display: inline-block;
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+footer {
+    border: solid thin black;
+    box-shadow: 3px 3px 5px #777777;
+    padding: 5px;
+    background-color: #AA4444;
+    color: white;
+    font-size: 15px;
+}

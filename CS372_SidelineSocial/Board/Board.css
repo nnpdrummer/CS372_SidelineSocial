@@ -90,14 +90,14 @@ tfoot{
     border-color: inherit;
 }
 
-a{
+table a{
     color: black;    
     text-decoration: none;
     font-weight: bolder;
     font-size: x-large;
 }
 
-a:visited{
+table a:visited{
     color: #8c8c8c;
     /*color: #474545;*/
 }
