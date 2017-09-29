@@ -4,18 +4,45 @@ body{
 
 
 .main_content{
-    margin-top: 125px;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
     border-style: solid;
     border-color: black;
-    box-shadow: 10px 10px 5px #777777;
+    box-shadow: 3px 3px 5px #777777;
     padding: .1%;
     background-color: black;
     border-radius: 7px;
 }
 
-.thread_content{
+.board_title{
+     margin-top: -40px;
+     margin-bottom: 20px;
+     padding-left: 5%;
+     height: 80px;
+     width: 100%;
+     overflow: hidden;
+}
+
+h1{
+   font-size: 300%;
+   display: inline-block;
+}
+
+#new_thread_button{
+    float: right;
+    margin-top: 36px;
+    margin-right: 11%;
+    padding: 10px 50px;
+    font-size: large;
+    border: thin solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #777777;
+    background-color: #ffefed;
+}
+
+#new_thread_button:hover, #nav_button:hover{
+    background-color: #e2ffe6;
 }
 
 table{
@@ -23,42 +50,44 @@ table{
 }
 
 th{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     background-color: #AA4444;
+    font-size: x-large;
 }
 
-#title{
-    width: 80%;
+#topic{
+    width: 70%;
 }
 
 tr{
-    background-color: #ffaa6d;
+    background-color: #ffbdb5;
 }
 
-tr:hover{
-    background-color:#66DF87;
-}
-/*#17602E
-*/
-#even:hover{
-     background-color: #66DF87;
+tr:hover, #even:hover{
+    background-color:#e2ffe6;
 }
 
 #even{
-    background-color: #ffcca8;
+    background-color: #ffefed;
 }
 
 td{
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 5px;
-    
+    font-size: large;
 }
 
 table, th, td{
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+tfoot{
+    display: table-footer-group;
+    vertical-align: bottom;
+    border-color: inherit;
 }
 
 a{
@@ -69,14 +98,23 @@ a{
 }
 
 a:visited{
-    color: #474545;
+    color: #8c8c8c;
+    /*color: #474545;*/
 }
 
-input[type=submit]{
-    margin-top: 5px;
-    border:2px solid #ccc; 
-    border-radius: 7px;
+.Page_Navigation{
     float: right;
+    margin-right: 6%;
+    margin-top: -4%;
+    margin-bottom: 5%;
 }
 
+#nav_button{
+    padding:5px 5px;
+    box-shadow: 1px 1px 1px #777777;
+    font-size: large;
+    border: thin solid;
+    border-radius: 5px;
+    background-color: #ffefed;
+}
 

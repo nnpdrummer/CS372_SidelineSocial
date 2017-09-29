@@ -3,7 +3,7 @@
     <head>
         <title>Boards</title>
         <link rel = "stylesheet" type = "text/css" href = "Board.css" />
-        <link rel = "stylesheet" type = "text/css" href = "../Menu.css" />
+        <link rel = "stylesheet" type = "text/css" href = "../NewMenu.css" />
     </head>
     <body>
          <div class="navbar">
@@ -16,43 +16,54 @@
                 <li class="register"><a href=../Register/Register.html>Register</a></li>
             </ul>
         </div>
+        <div class="board_title">
+            <h1>
+                Title of the Board
+            </h1>
+            <input type="button" value="+ Create New Thread" id="new_thread_button">
+        </div>
         <div class="main_content">
-            <div class="thread_content">
-                <table class="thread_list">
+            <table class="thread_list">
+                <tbody>
                     <tr class="head">
-                        <th id="title">Title</th>
-                        <th>Poster</th>
-                        <th>Date Posted</th>
+                        <th id="topic">Topic</th>
+                        <th>Original Poster</th>
+                        <th>Latest Post Date</th>
                     </tr>
                     <tr>
                         <td>
-                            <dl>
-                                <dt>
-                                    <a href="https://www.google.ca">News Flash: The Patriots still suck!</a>
-                                </dt>
-                                <dd>-Jim Bob V</dd>
-                            </dl>
+                            <a href="https://www.google.ca">News Flash: The Patriots still suck!</a>
                         </td>
                         <td>Jim Bob V</td>
                         <td>09/28/2017</td>
                     </tr>
                     <tr id="even">
                         <td>
-                            <dl>
-                                <dt>
-                                    <a href="https://www.bing.com">Kareem Hunt for president???</a>
-                                </dt>
-                                <dd>-Cool Rad Man</dd>
-                            </dl>
+                            <a href="https://www.bing.com">Kareem Hunt for president???</a>
                         </td>
                         <td>Cool Rad Man</td>
                         <td>09/28/2017</td>
                     </tr>
-                    <tfoot>
-                        <input type="submit">
-                    </tfoot>
-                </table>
-            </div>
+                    <tr>
+                        <td>
+                            <a href="https://www.google.ca">Another Thread</a>
+                        </td>
+                        <td>Scooter</td>
+                        <td>05/08/2015</td>
+                    </tr>
+                    <tr id="even">
+                        <td>
+                            <a href="https://www.google.ca">Who are you?</a>
+                        </td>
+                        <td>Cool Rad Man</td>
+                        <td>09/28/2017</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="Page_Navigation">
+            <input type="button" value="Prev" id="nav_button">
+            <input type="button" value="Next" id="nav_button">
         </div>
     </body>
 </html>
