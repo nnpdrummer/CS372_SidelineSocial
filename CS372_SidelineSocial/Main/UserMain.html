@@ -4,6 +4,7 @@
 	    <title>Welcome to Sideline Social!</title>
 	    <link rel="stylesheet" type="text/css" href="Main.css" />
 	    <link rel="stylesheet" type="text/css" href="../Menu.css" />
+	    <script src="../Menu.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -13,7 +14,18 @@
                 <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
                 <li class="search_icon"><button type="submit" class="searchButton"></button></li>
                 <li class="account_icon"><img width=20px src="../Images/user.ico" /></li>
-                <li class="account_name"><a href="../Profile/Profile.html">User Name</a></li>
+                <li class="account_name">
+                    <button onclick="showMenu()" class="account_button">Username</button>
+                    <div id="dropdown" class="account_menu">
+                        <a href="../User Profile/UserProfile.html">View Profile</a>
+                        <br />
+                        <a href="../User Control Panel/UserControlPanel.html">Edit Profile</a>
+                        <hr class="menu_divider" />
+                        <a href="../Admin Control Panel/AdminControlPanel.html">Admin Portal</a>
+                        <hr class="menu_divider" />
+                        <a href="../Logout/Logout.html">Logout</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </body>

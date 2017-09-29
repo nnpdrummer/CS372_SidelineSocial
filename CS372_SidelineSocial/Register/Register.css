@@ -1,18 +1,28 @@
 body {
     width: 1345px;
+    background-color: #DFDFDF;
 }
 
 h1 {
+    font-size: 250%;
     text-align: center;
+    margin-bottom: 0%;
 }
-    	    
+ 
+h2 {
+    font-size: 100%;
+    text-align: center;
+    margin-bottom: 3%;
+}
+   	    
 legend {
     text-align: left;
 }
     	    
 div {
     display: block;
-    text-align: center;}
+    text-align: center;
+}
     
 form {
     display: inline-block;
@@ -25,12 +35,17 @@ label {
     text-align: right;
     display: inline-block;
     width: 135px;
-    margin-bottom: 15px;}
+    margin-bottom: 15px;
+}
     	    
 button {
     width: 80px; 
     height: 30px;
-    background-color: #EEEEEE;}
+    background-color: #DFDFDF;
+    border: 1px solid darkgray;
+    cursor: pointer;
+}
     	    
 button:hover {
-    background-color: #CC4444;}
+    background-color: #CC4444;
+}

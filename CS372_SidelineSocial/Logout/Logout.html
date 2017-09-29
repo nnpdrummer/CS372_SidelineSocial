@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<title>Please register an account</title>
-    	<link rel="stylesheet" type="text/css" href="Login.css" />
+    	<title>Logging out of your account</title>
+    	<link rel="stylesheet" type="text/css" href="Logout.css" />
     	<link rel="stylesheet" type="text/css" href="../Menu.css" />
     </head>
     <body>
@@ -16,20 +16,14 @@
                 <li class="register"><a href=../Register/Register.html>Register</a></li>
             </ul>
         </div>
-    	<h1>Login to your account:</h1>
-    	<h2>Don't have an account? Sign up for a new account 
-    	    <a href="../Register/Register.html">here</a>!</h2>
-    	<div>
-    	    <form style="width: 400px;">
-    		    <fieldset>
-    		       	<legend>Account Login</legend>
-    		    	<label>Enter your username: </label>
-    		    	<input type=text style="width:220px;" />
-    		    	<label>Enter your password: </label>
-    	        	<input type=password style="width:220px;" />
-    		    	<button type=submit>Login</button>
-    	    	</fieldset>
-    	    </form>
-    	</div>
+    	<h1>You have successfully logged out of your account.</h1>
+    	<h2>Please click 
+    	    <a href="../Main/Main.html">here</a>
+    	    if your browser does not redirect you in five seconds.</h2>
+    	<script>
+            var timer = setTimeout(function() {
+                window.location='../Main/Main.html'
+            }, 5000);
+        </script>
     </body>
 </html>
