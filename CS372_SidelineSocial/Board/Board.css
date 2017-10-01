@@ -1,32 +1,33 @@
 body{
     background-color: #dfdfdf;
+    min-width: 600px
 }
-
 
 .main_content{
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
+    margin-top: 0%;
     border-style: solid;
     border-color: black;
     box-shadow: 3px 3px 5px #777777;
     padding: .1%;
     background-color: black;
-    border-radius: 7px;
 }
 
 .board_title{
      margin-top: -40px;
-     margin-bottom: 20px;
      padding-left: 5%;
-     height: 80px;
      width: 100%;
+     height: 90px;
      overflow: hidden;
 }
 
 h1{
    font-size: 300%;
+   padding-bottom: 3%;
    display: inline-block;
+   width: 500px;
 }
 
 #new_thread_button{
@@ -36,12 +37,12 @@ h1{
     padding: 10px 50px;
     font-size: large;
     border: thin solid;
-    border-radius: 5px;
     box-shadow: 1px 1px 1px #777777;
     background-color: #ffefed;
 }
 
 #new_thread_button:hover, #nav_button:hover{
+    transition: .5s;
     background-color: #e2ffe6;
 }
 
@@ -65,6 +66,7 @@ tr{
 }
 
 tr:hover, #even:hover{
+    transition: .5s;
     background-color:#e2ffe6;
 }
 
@@ -84,12 +86,6 @@ table, th, td{
     border-collapse: collapse;
 }
 
-tfoot{
-    display: table-footer-group;
-    vertical-align: bottom;
-    border-color: inherit;
-}
-
 table a{
     color: black;    
     text-decoration: none;
@@ -99,7 +95,6 @@ table a{
 
 table a:visited{
     color: #8c8c8c;
-    /*color: #474545;*/
 }
 
 .Page_Navigation{
