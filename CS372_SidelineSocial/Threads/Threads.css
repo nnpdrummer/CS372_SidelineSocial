@@ -18,8 +18,29 @@ h1{
     width: 500px;
 }
 
+#new_post_button{
+    float: right;
+    margin-top: 36px;
+    margin-right: 11%;
+    padding: 10px 50px;
+    font-size: large;
+    border: thin solid;
+    box-shadow: 1px 1px 1px #777777;
+    background-color: #ffefed;
+    position: absolute;
+    cursor: pointer;
+    /*#DFDFDF
+    #ffefed
+    */
+}
+
+#new_post_button:hover, #nav_button:hover{
+    transition: .5s;
+    background-color: #e2ffe6;
+}
+
 .main_content{
-    border: solid thick black;
+    border: solid medium black;
     box-shadow: 3px 3px 5px #777777;
     background-color: #ffbdb5;
     margin: 0% 5% 2% 5%;
@@ -29,7 +50,7 @@ h1{
 
 .first_post_header{
     background-color: #AA4444;
-    border-right: solid thick;
+    border-right: solid medium;
     display: table-cell;
     width: 100px;
     overflow: hidden;
@@ -44,6 +65,11 @@ img{
 h3{
     margin-top: 1px;
     text-align: center;
+}
+
+#poster_link a{
+    color: black;
+    text-decoration: none;
 }
 
 .post_content_space{
@@ -62,12 +88,13 @@ h3{
     padding: 0px;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
 }
 
 .other_content{
-    border-left: solid thick black;
-    border-right: solid thick black;
-    border-bottom: solid thick black;
+    border-left: solid medium black;
+    border-right: solid medium black;
+    border-bottom: solid medium black;
     border-top: none;
     box-shadow: 3px 3px 5px #777777;
     background-color: #ffbdb5;
@@ -80,14 +107,44 @@ h3{
     background-color: #ffefed;
 }
 
+img:hover, h3:hover{
+    box-shadow: 3px 3px 5px #777777;
+}
+
 .other_post_0:nth-child(1){
-    border-top: solid thick black;
+    border-top: solid medium black;
 }
 
 .other_post_header{
     background-color: #AA4444;
-    border-right: solid thick;
+    border-right: solid medium;
     display: table-cell;
     width: 100px;
     overflow: hidden;
+}
+
+.Page_Navigation{
+    float: right;
+    margin-right: 6%;
+    margin-top: -4%;
+    margin-bottom: 5%;
+}
+
+#nav_button{
+    padding:5px 5px;
+    box-shadow: 1px 1px 1px #777777;
+    font-size: large;
+    border: thin solid;
+    background-color: #ffefed;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 10%;
+    border: solid thin black;
+    box-shadow: 3px 3px 5px #777777;
+    padding: 5px;
+    background-color: #AA4444;
+    color: white;
+    font-size: 15px;
 }
