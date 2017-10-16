@@ -5,7 +5,7 @@ body{
 
 .main_content{
     margin: 0% 5% 5% 5%;
-    border: solid black;
+    border: solid thinblack;
     box-shadow: 3px 3px 5px #777777;
     padding: .1%;
     background-color: black;

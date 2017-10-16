@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="UserControlPanel.css" />
     	<link rel="stylesheet" type="text/css" href="../Menu.css" />
+    	<script type="text/javascript" src="../Menu.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -14,38 +15,58 @@
                 <li class="home"><a href=../Main/UserMain.html>Home</a></li>
                 <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
                 <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-                <li class="login"><a href=../Login/Login.html>Login</a></li>
-                <li class="register"><a href=../Register/Register.html>Register</a></li>
+                <li class="account_icon"><img width=20px src="../Images/user.ico" /></li>
+                <li class="account_name">
+                    <button onclick="showMenu()" class="account_button">Username</button>
+                    <div id="dropdown" class="account_menu">
+                        <a href="../UserProfile/UserProfile.html">View Profile</a>
+                        <br />
+                        <a href="../UserControlPanel/UserControlPanel.html">Edit Profile</a>
+                        <hr class="menu_divider" />
+                        <a href="../AdminControlPanel/AdminControlPanel.html">Admin Portal</a>
+                        <hr class="menu_divider" />
+                        <a href="../Logout/Logout.html">Logout</a>
+                    </div>
+                </li>
             </ul>
         </div>
-        <h1>User Control Panel</h1>
-        <div>
-            <fieldset>
-                <legend>Account Settings</legend>
-                <form>
-                    <label>New Password:</label><br/>
-                    <input type="password" name="newPwd"><br/>
-                    <label>Confirm Password:</label><br/>
-                    <input type="password" name="confirmPwd"><br/>
-                    <label>Email:</label><br/>
-                    <input type="email" name="email"><br/>
-                    <input type="submit" value="DELETE ACCOUNT"/>
-                </form>
-            </fieldset>
+        <div class="header">
+            <h1>User Control Panel</h1>
         </div>
-        <div>
-            <fieldset>
-                <legend>Profile Settings</legend>
-                <form>
-                    <label>Change Avatar</label><br/>
-                    <label>Edit Bio</label><br/>
-                    <label>Modify Links</label><br/>
+        <div class="main_content">
+            <div class="settings">
+                <form action="" id="accountForm" onsubmit="">
+                    <div class="account_settings">
+                        <h2>Account Settings</h2>
+                        <label for="oldPwd">Old Password:</label><br/>
+                        <input type="password" name="oldPwd"><br/>
+                        <label for="newPwd">New Password:</label><br/>
+                        <input type="password" name="newPwd"><br/>
+                        <label for="confirmPwd">Confirm Password:</label><br/>
+                        <input type="password" name="confirmPwd"><br/>
+                        <form action="" id="changeAvatar">
+                            <fieldset>
+                                <legend>Change Avatar</legend>
+                                <input type="file" name="profilePic" accept="image/*">
+                            </fieldset>
+                        </form>
+                        <form action="" id="editBio">
+                            <fieldset>
+                                <legend>Edit Bio</legend>
+                                <textarea name="bio"></textarea>
+                            </fieldset>
+                        </form>
+                        <form action="" id="editLinks">
+                            <fieldset>
+                                <legend>Edit Links</legend>
+                                <textarea name="links"></textarea>
+                            </fieldset>
+                        </form>
+                        <input type="submit" id="saveChanges" value="Save Changes"/>
+                        <input type="button" id="deleteAccount" value="DELETE ACCOUNT"/>
+                    </div>
                 </form>
-            </fieldset>
-        </div>
-        <div>
-            <br/>
-            <input type="submit" value="Save Changes"/>
+            </div>
         </div>
     </body>
 </html>
