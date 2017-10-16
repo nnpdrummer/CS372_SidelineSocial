@@ -4,24 +4,24 @@
 	    <title>Welcome to Sideline Social!</title>
 	    <link rel="stylesheet" type="text/css" href="Main.css" />
 	    <link rel="stylesheet" type="text/css" href="../Menu.css" />
-	    <script src="../Menu.js"></script>
+	    <script type="text/javascript" src="../Menu.js"></script>
     </head>
     <body>
         <div class="navbar">
             <h1 class="banner"></h1>
             <ul class="menu">
-                <li class="home"><a href=../Main/Main.html>Home</a></li>
+                <li class="home"><a href=../Main/UserMain.html>Home</a></li>
                 <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
                 <li class="search_icon"><button type="submit" class="searchButton"></button></li>
                 <li class="account_icon"><img width=20px src="../Images/user.ico" /></li>
                 <li class="account_name">
                     <button onclick="showMenu()" class="account_button">Username</button>
                     <div id="dropdown" class="account_menu">
-                        <a href="../User Profile/UserProfile.html">View Profile</a>
+                        <a href="../UserProfile/UserProfile.html">View Profile</a>
                         <br />
-                        <a href="../User Control Panel/UserControlPanel.html">Edit Profile</a>
+                        <a href="../UserControlPanel/UserControlPanel.html">Edit Profile</a>
                         <hr class="menu_divider" />
-                        <a href="../Admin Control Panel/AdminControlPanel.html">Admin Portal</a>
+                        <a href="../AdminControlPanel/AdminControlPanel.html">Admin Portal</a>
                         <hr class="menu_divider" />
                         <a href="../Logout/Logout.html">Logout</a>
                     </div>
@@ -78,6 +78,6 @@
                 </ul>
             </aside>
         </section>
-        <footer>Created by Benjamin Schmidt, Christopher Hier, & Ryan Arnold. Copyright 2017. All rights reserved.</footer>
+        <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
     </body>
 </html>

@@ -4,6 +4,7 @@
     	<title>Please register an account</title>
     	<link rel="stylesheet" type="text/css" href="Register.css" />
     	<link rel="stylesheet" type="text/css" href="../Menu.css" />
+    	<script type="text/javascript" src="Register.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -20,18 +21,19 @@
     	<h2>Already have an account? Login 
     	    <a href="../Login/Login.html">here</a> instead!</h2>
     	<div>
-    	    <form style="width: 400px;">
-    		    <fieldset>
-    		       	<legend>Account Registration</legend>
-    		    	<label>Your e-mail address: </label>
-    		    	<input type=e-mail style="width:223px;" />
-    		    	<label>Select a username: </label>
-    		    	<input type=text style="width:223px;" />
-    		    	<label>Select a password: </label>
-    	        	<input type=password style="width:223px;" />
-    		    	<button type=submit>Submit</button>
-    	    	</fieldset>
+    	    <form onsubmit="return verify(this);" action="../Main/UserMain.html">
+    		    <h1 class="legend">Account Registration</h1>
+    		    <label>Your e-mail address: </label>
+    		    <input id="email" type=e-mail required style="width:220px;" />
+    		    <label>Select a username: </label>
+    		    <input id="username" type=text required style="width:220px;" />
+    		    <label>Select a password: </label>
+    	        <input id="pass1" type=password required style="width:220px;" />
+    	        <label>Re-enter your password: </label>
+    	        <input id="pass2" type=password required style="width:220px;" />
+    		    <input class="submit" type=submit value="Submit" />
     	    </form>
     	</div>
+    	<footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
     </body>
 </html>

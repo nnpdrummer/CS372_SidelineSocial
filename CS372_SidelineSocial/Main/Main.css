@@ -1,5 +1,5 @@
 body {
-    /*width: 1345px;*/
+    min-width: 600px;
     background-color: #DFDFDF;
 }
 
@@ -11,7 +11,6 @@ body {
     box-shadow: 3px 3px 5px #777777;
     padding: .1%;
     background-color: black;
-    border-radius: 7px;
     width: 60%;
     float: left;
 }
@@ -90,7 +89,6 @@ aside {
     box-shadow: 3px 3px 5px #777777;
     padding: .1%;
     background-color: #AA4444;
-    border-radius: 7px;
     color: white;
     font-size: xx-large;
     font-weight: bold;
@@ -118,13 +116,4 @@ section {
     display: inline-block;
     margin-bottom: 5%;
     width: 100%;
-}
-
-footer {
-    border: solid thin black;
-    box-shadow: 3px 3px 5px #777777;
-    padding: 5px;
-    background-color: #AA4444;
-    color: white;
-    font-size: 15px;
 }

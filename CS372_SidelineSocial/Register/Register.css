@@ -1,5 +1,5 @@
 body {
-    width: 1345px;
+    min-width: 600px;
     background-color: #DFDFDF;
 }
 
@@ -7,6 +7,13 @@ h1 {
     font-size: 250%;
     text-align: center;
     margin-bottom: 0%;
+}
+
+.legend {
+    font-size: 215%;
+    margin-top: -1%;
+    margin-bottom: 20px;
+    text-decoration: underline;
 }
  
 h2 {
@@ -25,10 +32,18 @@ div {
 }
     
 form {
+    width: 400px;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align: right;
+    margin-bottom: 200px;
+    border-style: solid;
+    border-color: black;
+    box-shadow: 3px 3px 5px #777777;
+    background-color: #AA4444;
+    color: white;
+    padding: 1%;
 }
     	    
 label {
@@ -38,14 +53,14 @@ label {
     margin-bottom: 15px;
 }
     	    
-button {
+.submit {
     width: 80px; 
     height: 30px;
-    background-color: #DFDFDF;
+    background-color: white;
     border: 1px solid darkgray;
     cursor: pointer;
 }
     	    
-button:hover {
-    background-color: #CC4444;
+.submit:hover {
+    background-color: #e2ffe6;
 }
