@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="UserControlPanel.css" />
     	<link rel="stylesheet" type="text/css" href="../Menu.css" />
     	<script type="text/javascript" src="../Menu.js"></script>
+    	<script src="UserControlPanel.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -35,15 +36,18 @@
         </div>
         <div class="main_content">
             <div class="settings">
-                <form action="" id="accountForm" onsubmit="">
+                <form action="" id="accountForm" onsubmit="return validate();">
                     <div class="account_settings">
                         <h2>Account Settings</h2>
                         <label for="oldPwd">Old Password:</label><br/>
                         <input type="password" name="oldPwd"><br/>
+                        <p id="oldPwdError"></p>
                         <label for="newPwd">New Password:</label><br/>
                         <input type="password" name="newPwd"><br/>
+                        <p id="newPwdError"></p>
                         <label for="confirmPwd">Confirm Password:</label><br/>
                         <input type="password" name="confirmPwd"><br/>
+                        <p id="confirmPwdError"></p>
                         <form action="" id="changeAvatar">
                             <fieldset>
                                 <legend>Change Avatar</legend>
@@ -63,10 +67,11 @@
                             </fieldset>
                         </form>
                         <input type="submit" id="saveChanges" value="Save Changes"/>
-                        <input type="button" id="deleteAccount" value="DELETE ACCOUNT"/>
+                        <input type="button" id="deleteAccountBtn" value="DELETE ACCOUNT" onclick="deleteAccount();"/>
                     </div>
                 </form>
             </div>
         </div>
+        <footer>Created by Benjamin Schmidt, Christopher Hier, & Ryan Arnold. Copyright 2017. All rights reserved.</footer>
     </body>
 </html>

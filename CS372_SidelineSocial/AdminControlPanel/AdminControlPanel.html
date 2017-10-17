@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="AdminControlPanel.css" />
     	<link rel="stylesheet" type="text/css" href="../Menu.css" />
     	<script type="text/javascript" src="../Menu.js"></script>
+    	<script src="AdminControlPanel.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -36,10 +37,14 @@
         <div class="main_content">
             <h2>Manage Users</h2>
             <div class="content">
-                <input type="search" placeholder="Select User..."/> <br/>
-                <input type="button" id="ban" value="BAN"/>
-                <input type="button" id="promote" value="PROMOTE"/>
+                <form id="selectUserForm">
+                    <input type="search" id="selectUser" placeholder="Select User..."/> <br/>
+                    <p id="selectUserError"></p>
+                    <input type="button" id="ban" value="BAN"/ onclick="validate(this);"/>
+                    <input type="button" id="promote" value="PROMOTE"/ onclick="validate(this);">
+                </form>
             </div>
         </div>
+        <footer>Created by Benjamin Schmidt, Christopher Hier, & Ryan Arnold. Copyright 2017. All rights reserved.</footer>
     </body>
 </html>

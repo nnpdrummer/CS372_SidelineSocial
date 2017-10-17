@@ -78,6 +78,18 @@ input[type="button"]{
     cursor: pointer;
 }
 
+input[type="button"]:hover, input[type="file"]:hover, #saveChanges:hover{
+    transition: .5s;
+    background-color: #e2ffe6;
+}
+
+textarea:focus, input[type="password"]:focus{
+    transition: .5s;
+    background-color: #e2ffe6;
+    outline: none !important;
+    box-shadow: 0 0 10px #e2ffe6;
+}
+
 textarea{
     width: 99%;
     height: 150px;
@@ -96,6 +108,6 @@ textarea{
     cursor: pointer;
 }
 
-#deleteAccount{
+#deleteAccountBtn{
     margin-top: 5px
 }
