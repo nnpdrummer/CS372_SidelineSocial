@@ -11,44 +11,43 @@
         <div class="navbar">
             <h1 class="banner"></h1>
             <ul class="menu">
-                <li class="home"><a href=../Main/UserMain.html>Home</a></li>
+                <li class="home"><a href=../Main/Main.html>Home</a></li>
                 <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
                 <li class="search_icon"><button type="submit" class="searchButton"></button></li>
                 <li class="login"><a href=../Login/Login.html>Login</a></li>
                 <li class="register"><a href=../Register/Register.html>Register</a></li>
             </ul>
         </div>
-        <div id="profile">
-            <div>
-                <img id="avatar" src="../Images/DefaultProfileAvatar.png" alt="USERNAME">
+        <div class="profile">
+            <div class="left">
+                <div class="picture">
+                    <img id="avatar" src="../Images/user.ico" alt="Avatar Picture">
+                </div>
+                <div class="userinfo">
+                    <label>Username: </label>
+                    <input id="username" type="text" readonly value="FanFootballLuver"/><br />
+                    <label>User Type: </label>
+                    <input id="usertype" type="text" readonly value="General User" /> <br />
+                    <label>Join Date: </label>
+                    <input id="date" type="text" readonly value="October 18, 2017" />
+                </div>
             </div>
-            <div id="info">
-                USERNAME <br/>
-                USER TYPE <br/>
-                Joined: MONTH DAY, 20XX
+            <div class="right">
+                <div class="bio">
+                    <h1>About Me</h1>
+                    <textarea readonly>I love CS372 & fantasy football!</textarea>
+                </div>
+                <div class="links">
+                    <h1>Fantasy Links</h1>
+                    <label>Yahoo Profile: </label><br />
+                    <a id="yahoo" href="http://www.yahoo.com/">Awesome Yahoo Profile</a><br />
+                    <label>ESPN Profile: </label><br />
+                    <a id="espn" href="http://www.espn.com/">Sweet ESPN Profile</a><br />
+                    <label>NFL Profile: </label><br />
+                    <a id="nfl" href="http://www.nfl.com/">Super NFL Profile</a>
+                </div>
             </div>
-            <div id="bio">
-                <fieldset>
-                    <legend>BIO</legend>
-                    Text goes here!
-                </fieldset>
-            </div>
-            <div id="links">
-                <fieldset>
-                    <legend>Fantasy Links</legend>
-                    Yahoo Profile: <br/>
-                    ESPN Profile: <br/>
-                    NFL Profile: <br/>
-                </fieldset>
-            </div>
-            <div id="activity">
-                <fieldset>
-                    <legend>Recent Activity</legend>
-                    Recent Thread <br/>
-                    Older Thread <br/>
-                    Even Older Thread
-                </fieldset>
-            </div>
-        </div>        
+        </div>
+        <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
     </body>
 </html>

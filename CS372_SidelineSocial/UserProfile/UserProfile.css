@@ -1,7 +1,92 @@
-#avatar {
-    height: 250px;
-    width:  250px;
-    border: 5px double black;
+body {
+    min-width: 600px;
+    background-color: #DFDFDF;
 }
 
+.profile { 
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 200px;
+    border: solid thin black;
+    box-shadow: 3px 3px 5px #777777;
+}
 
+.picture, .userinfo, .bio, .links {
+    background-color: #AA4444;
+    color: white;
+    margin: 0px;
+    height: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.picture, .userinfo {
+    padding-right: 5%;
+}
+
+.bio, .links {
+    padding-left: 5%;
+}
+
+.picture {
+    text-align: center;
+}
+
+.left {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 49.99%;
+    text-align: right;
+}
+
+.right {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 49.99%;
+}
+
+textarea {
+    width: 90%;
+    height: 35%;
+    font-size: 130%;
+}
+
+#avatar {
+    background-color: #AA4444;
+    height: 250px;
+    width: 250px;
+    border: solid thin black;
+    box-shadow: 3px 3px 5px #777777;
+}
+
+h1 {
+    font-size: 250%;
+    margin: 0px 0px 8% 0px;
+    text-decoration: underline;
+}
+
+label {
+    font-size: 140%;
+}
+
+#username, #usertype, #date {
+    margin-bottom: 3%;
+    background-color: #AA4444;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    box-shadow: 3px 3px 5px #777777;
+    text-align: center;
+    height: 10%;
+    width: 75%;
+    border: solid thin black;
+}
+
+#yahoo, #espn, #nfl {
+    text-decoration: none;
+    font-size: 140%;
+    color: #ffbdb5;
+    margin-bottom: 5%;
+}
