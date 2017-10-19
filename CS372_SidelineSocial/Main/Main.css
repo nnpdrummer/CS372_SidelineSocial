@@ -6,8 +6,6 @@ body {
 .main_content {
     margin-left: 5%;
     margin-right: 5%;
-    border-style: solid thin;
-    border-color: black;
     box-shadow: 3px 3px 5px #777777;
     padding: .1%;
     background-color: black;
@@ -84,8 +82,7 @@ table a:visited {
 }
 
 aside {
-    border-style: solid;
-    border-color: black;
+    border: solid thin black;
     box-shadow: 3px 3px 5px #777777;
     padding: .1%;
     background-color: #AA4444;

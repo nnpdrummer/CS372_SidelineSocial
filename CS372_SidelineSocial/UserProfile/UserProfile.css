@@ -9,48 +9,53 @@ body {
     margin-bottom: 200px;
     border: solid thin black;
     box-shadow: 3px 3px 5px #777777;
-}
-
-.picture, .userinfo, .bio, .links {
     background-color: #AA4444;
     color: white;
-    margin: 0px;
-    height: 250px;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .picture, .userinfo {
-    padding-right: 5%;
-}
-
-.bio, .links {
-    padding-left: 5%;
+    height: 250px;
 }
 
 .picture {
+    float: left;
     text-align: center;
+    width: 50%;
+    margin: 3% 0% 3% 0%;
 }
 
-.left {
+.userinfo {
+    float: right;
+    width: 50%;
+    padding: 9% 0% 0% 0%;
+}
+
+.bio {
+    float: left;
+    background-color: #ffbdb5;
+    border-top: solid thin black;
+    box-shadow: 3px 3px 5px #777777;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+}
+
+.top {
     float: left;
     margin: 0px;
     padding: 0px;
-    width: 49.99%;
-    text-align: right;
-}
-
-.right {
-    float: left;
-    margin: 0px;
-    padding: 0px;
-    width: 49.99%;
+    width: 99%;
 }
 
 textarea {
     width: 90%;
-    height: 35%;
+    height: 200px;
     font-size: 130%;
+    box-shadow: 3px 3px 5px #777777;
+    margin-bottom: 7%;
 }
 
 #avatar {
@@ -63,7 +68,7 @@ textarea {
 
 h1 {
     font-size: 250%;
-    margin: 0px 0px 8% 0px;
+    margin: 0px 0px 5% 0px;
     text-decoration: underline;
 }
 
@@ -82,11 +87,4 @@ label {
     height: 10%;
     width: 75%;
     border: solid thin black;
-}
-
-#yahoo, #espn, #nfl {
-    text-decoration: none;
-    font-size: 140%;
-    color: #ffbdb5;
-    margin-bottom: 5%;
 }
