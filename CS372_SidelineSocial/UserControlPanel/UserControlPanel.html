@@ -40,13 +40,13 @@
                     <div class="account_settings">
                         <h2>Account Settings</h2>
                         <label for="oldPwd">Old Password:</label><br/>
-                        <input type="password" name="oldPwd" placeholder="Your Current Password..."><br/>
+                        <input type="password" name="oldPwd"><br/>
                         <p id="oldPwdError"></p>
                         <label for="newPwd">New Password:</label><br/>
-                        <input type="password" name="newPwd" placeholder="Your New Password..."><br/>
+                        <input type="password" name="newPwd"><br/>
                         <p id="newPwdError"></p>
                         <label for="confirmPwd">Confirm Password:</label><br/>
-                        <input type="password" name="confirmPwd" placeholder="Your New Password..."><br/>
+                        <input type="password" name="confirmPwd"><br/>
                         <p id="confirmPwdError"></p>
                         <form action="" id="changeAvatar">
                             <fieldset>
@@ -57,21 +57,23 @@
                         <form action="" id="editBio">
                             <fieldset>
                                 <legend>Edit Bio</legend>
-                                <textarea name="bio" placeholder="My name is Ricardo Von Dupen V. I like football a lot. Especially Fantasy football."></textarea>
+                                <textarea name="bio"></textarea>
                             </fieldset>
                         </form>
                         <form action="" id="editLinks">
                             <fieldset>
                                 <legend>Edit Links</legend>
-                                <textarea name="links" placeholder=""></textarea>
+                                <textarea name="links"></textarea>
                             </fieldset>
                         </form>
-                        <input type="submit" id="saveChanges" value="Save Changes"/>
-                        <input type="button" id="deleteAccountBtn" value="DELETE ACCOUNT" onclick="deleteAccount();"/>
+                        <div class="buttons">
+                            <input type="submit" id="saveChanges" value="Save Changes"/>
+                            <input type="button" id="deleteAccountBtn" value="DELETE ACCOUNT" onclick="deleteAccount();"/>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
-        <footer>Created by Benjamin Schmidt, Christopher Hier, & Ryan Arnold. Copyright 2017. All rights reserved.</footer>
+        <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
     </body>
 </html>

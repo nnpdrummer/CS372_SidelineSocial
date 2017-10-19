@@ -21,6 +21,7 @@ h1{
     box-shadow: 3px 3px 5px #777777;
     background-color: #ffbdb5;
     width: 50%;
+    min-width: 320px;
 }
 
 h2{
@@ -109,5 +110,9 @@ textarea{
 }
 
 #deleteAccountBtn{
-    margin-top: 5px
+    margin-top: 5px;
+}
+
+.buttons {
+    width: 100%;
 }
