@@ -19,14 +19,16 @@
     	<h1>Login to your account:</h1>
     	<h2>Don't have an account? Sign up for a new account 
     	    <a href="../Register/Register.html">here</a>!</h2>
-    	<div>
+    	<div class="main_content">
     	    <form action="../Main/UserMain.html">
     	        <h1 class="legend">Account Details</h1>
-    		   	<label>Enter your username: </label>
-    		   	<input type=text required style="width:220px;" />
-    		   	<label>Enter your password: </label>
-    	       	<input type=password required style="width:220px;" />
-    		    <input class="submit" type=submit value="Submit" />
+    	        <div class="login_content">
+    	            <label for="username">Enter your username: </label></br>
+    		   	    <input type=text name="username" id="username" required placeholder="Your username..."/></br>
+        		   	<label for="pass">Enter your password: </label></br>
+        	       	<input type=password name="pass" required placeholder="Your password..."/></br>
+        		    <input class="submit" type=submit value="Submit" />
+    	        </div>
     	    </form>
     	</div>
     	<footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
