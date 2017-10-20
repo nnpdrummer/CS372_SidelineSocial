@@ -134,6 +134,10 @@ ul.menu a:hover {
     margin: 0px;
 }
 
+::selection{
+    background-color: #9aff82;
+}
+
 footer {
     border: solid thin black;
     box-shadow: 3px 3px 5px #777777;

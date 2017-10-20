@@ -4,6 +4,7 @@
         <title>Boards</title>
         <link rel = "stylesheet" type = "text/css" href = "Board.css" />
         <link rel = "stylesheet" type = "text/css" href = "../Menu.css" />
+        <script src="Board.js"></script>
     </head>
     <body>
          <div class="navbar">
@@ -20,7 +21,9 @@
             <h1>
                 Title of the Board
             </h1>
-            <input type="button" value="+ Create New Thread" id="new_thread_button">
+            <a href="#create_thread">
+                <input type="button" value="+ Create New Thread" id="new_thread_button" onclick="revealNewThreadGUI();">
+            </a>
         </div>
         <div class="main_content">
             <table class="thread_list">
@@ -60,6 +63,9 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="create_thread" id="create_thread">
+            
         </div>
         <div class="Page_Navigation">
             <input type="button" value="Prev" id="nav_button">

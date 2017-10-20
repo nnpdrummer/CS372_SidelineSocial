@@ -1,7 +1,6 @@
 body{
     background-color: #dfdfdf;
     min-width: 800px;
-    font-family: "Georgia";
 }
 
 .thread_title{
@@ -28,14 +27,25 @@ h1{
     border: thin solid;
     box-shadow: 1px 1px 1px #777777;
     background-color: #ffefed;
-    position: absolute;
     cursor: pointer;
     /*#DFDFDF
     #ffefed
     */
 }
 
-#new_post_button:hover, #nav_button:hover{
+#disabled_button{
+    float: right;
+    margin-top: 36px;
+    margin-right: 11%;
+    padding: 10px 50px;
+    font-size: large;
+    border: thin solid;
+    box-shadow: 1px 1px 1px #777777;
+    background-color: #ffefed;
+    cursor: default;
+}
+
+#new_post_button:hover, #nav_button:hover, #post_button:hover{
     transition: .5s;
     background-color: #e2ffe6;
 }
@@ -44,7 +54,7 @@ h1{
     border: solid medium black;
     box-shadow: 3px 3px 5px #777777;
     background-color: #ffbdb5;
-    margin: 0% 5% 2% 5%;
+    margin: 0% 5% 20px 5%;
     padding: 0%;
     overflow: hidden;
 }
@@ -140,10 +150,11 @@ img:hover, h3:hover{
 }
 
 .create_post{
+    visibility: hidden;
     border: solid medium black;
     box-shadow: 3px 3px 5px #777777;
     background-color: #ffbdb5;
-    margin: 0% 5% 2% 5%;
+    margin: 40px 5% 20px 5%;
     padding: 0%;
     overflow: hidden;
 }
@@ -167,6 +178,12 @@ label{
     box-shadow: 1px 1px 1px #777777;
 }
 
+#reply_post:focus{
+    transition: .5s;
+    outline-color: #e2ffe6;
+    background-color: #e2ffe6;
+}
+
 #post_button{
     padding:5px 5px;
     box-shadow: 1px 1px 1px #777777;
@@ -178,5 +195,5 @@ label{
 }
 
 footer{
-    margin-top: 7%;
+    margin-top: 75px;
 }

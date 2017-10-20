@@ -4,6 +4,7 @@
         <title>Threads</title>
         <link rel = "stylesheet" type = "text/css" href = "Threads.css" />
 		<link rel = "stylesheet" type = "text/css" href = "../Menu.css" />
+		<script src="Threads.js"></script>
     </head>
     <body>
 	<div class="navbar">
@@ -21,7 +22,9 @@
         <h1>
             Title of Thread
         </h1>
-        <input type="button" value="+ Create New Post" id="new_post_button">
+        <a href="#create_post">
+            <input type="button" value="+ Create New Post" id="new_post_button" onclick="revealNewPostGUI();"/>
+        </a>
     </div>
     
     <!-- First Post Content-->
@@ -206,22 +209,13 @@
             </div>
         </li>
     </ul>
-    <div class="create_post">
-        <div class="create_post_content">
-            <label for="reply_post">Create Post</label></br>
-            <textarea id="reply_post" name="reply_post"></textarea></br>
-            <input type="button" value="Post" id="post_button">
-        </div>
+    <div class="create_post" id="create_post">
     </div>
     
     <div class="Page_Navigation">
         <input type="button" value="Prev" id="nav_button">
         <input type="button" value="Next" id="nav_button">
     </div>
-<<<<<<< HEAD
-    <footer>Created by Benjamin Schmidt and Christopher Hier. Copyright 2017. All rights reserved.</footer>
-=======
     <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
->>>>>>> 6a651164ce178295961e9762cd53c53f11637e26
     </body>
 </html>
