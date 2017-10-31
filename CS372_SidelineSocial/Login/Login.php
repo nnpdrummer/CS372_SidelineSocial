@@ -1,3 +1,26 @@
+<?php
+    //Connect to the database
+    $host = "127.0.0.1";
+    $user = "cghier";                     
+    $pass = "";                                  
+    $db = "main";                                  
+    $port = 3306;                                
+    
+    $connection = mysqli_connect($host, $user, $pass, $db, $port)or die(mysql_error());
+    
+    if (isset($_POST["username"])) {
+        $username = $_POST["username"];
+        $password = $_POST["pass"];
+        $query = "SELECT * FROM users WHERE username = '$username'";
+        $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+        if (!$row == null) {
+            if ($row['username'] === $username && $row['password'] === $password) {
+                header( 'Location: ../Main/UserMain.html' );
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,7 +43,7 @@
     	<h2>Don't have an account? Sign up for a new account 
     	    <a href="../Register/Register.html">here</a>!</h2>
     	<div class="main_content">
-    	    <form action="../Main/UserMain.html">
+    	    <form action="" method="post">
     	        <h1 class="legend">Account Details</h1>
     	        <div class="login_content">
     	            <label for="username">Enter your username: </label></br>
