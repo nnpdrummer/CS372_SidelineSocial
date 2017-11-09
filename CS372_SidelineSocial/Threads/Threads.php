@@ -1,3 +1,6 @@
+<?php
+    require '../Menu.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,16 +10,7 @@
 		<script src="Threads.js"></script>
     </head>
     <body>
-	<div class="navbar">
-        <h1 class="banner"></h1>
-        <ul class="menu">
-            <li class="home"><a href=../Main/Main.html>Home</a></li>
-            <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
-            <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-            <li class="login"><a href=../Login/Login.php>Login</a></li>
-            <li class="register"><a href=../Register/Register.html>Register</a></li>
-        </ul>
-    </div>
+	<?php fillMenu(); ?>
         
     <div class="thread_title">
         <h1>
@@ -40,7 +34,7 @@
                 <tr>
                     <td>
                         <h3 id="poster_link">
-                            <a href="../UserProfile/UserProfile.html">Name of poster</a>
+                            <a href="../UserProfile/UserProfile.php">Name of poster</a>
                         </h3> 
                     </td>
                 </tr>
@@ -86,7 +80,7 @@
                         <tr>
                             <td>
                                 <h3 id="poster_link">
-                                    <a href="../UserProfile/UserProfile.html">Name of poster</a>
+                                    <a href="../UserProfile/UserProfile.php">Name of poster</a>
                                 </h3> 
                             </td>
                         </tr>
@@ -125,7 +119,7 @@
                         <tr>
                             <td>
                                 <h3 id="poster_link">
-                                    <a href="../UserProfile/UserProfile.html">Name of poster</a>
+                                    <a href="../UserProfile/UserProfile.php">Name of poster</a>
                                 </h3> 
                             </td>
                         </tr>
@@ -151,7 +145,7 @@
                         <tr>
                             <td>
                                 <h3 id="poster_link">
-                                    <a href="../UserProfile/UserProfile.html">Name of poster</a>
+                                    <a href="../UserProfile/UserProfile.php">Name of poster</a>
                                 </h3> 
                             </td>
                         </tr>
@@ -190,7 +184,7 @@
                         <tr>
                             <td>
                                 <h3 id="poster_link">
-                                    <a href="../UserProfile/UserProfile.html">Name of poster</a>
+                                    <a href="../UserProfile/UserProfile.php">Name of poster</a>
                                 </h3> 
                             </td>
                         </tr>
@@ -216,6 +210,6 @@
         <input type="button" value="Prev" id="nav_button">
         <input type="button" value="Next" id="nav_button">
     </div>
-    <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
+    <?php placeFooter(); ?>
     </body>
 </html>

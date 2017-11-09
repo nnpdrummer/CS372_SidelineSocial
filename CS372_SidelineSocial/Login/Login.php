@@ -1,13 +1,14 @@
 <?php
     require '../DBConnect.php';
+    require '../Menu.php';
     
     if (isset($_POST["username"])) {
-        $username = $_POST["username"];
-        $password = $_POST["pass"];
+        $username = $connection->real_escape_string($_POST["username"]);
+        $password = $connection->real_escape_string($_POST["pass"]);
         $query = "SELECT * FROM users WHERE username = '$username' AND password = password('$password')";
         $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
         if (!$row == null) {
-            header( 'Location: ../Main/UserMain.html' );
+            header( 'Location: ../Main/UserMain.php' );
         }
         else {
             $error = true;
@@ -23,19 +24,10 @@
     	<link rel="stylesheet" type="text/css" href="../Menu.css" />
     </head>
     <body>
-        <div class="navbar">
-            <h1 class="banner"></h1>
-            <ul class="menu">
-                <li class="home"><a href=../Main/Main.html>Home</a></li>
-                <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
-                <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-                <li class="login"><a href=../Login/Login.html>Login</a></li>
-                <li class="register"><a href=../Register/Register.html>Register</a></li>
-            </ul>
-        </div>
+        <?php fillMenu(); ?>
     	<h1>Login to your account:</h1>
     	<h2>Don't have an account? Sign up for a new account 
-    	    <a href="../Register/Register.html">here</a>!</h2>
+    	    <a href="../Register/Register.php">here</a>!</h2>
     	<div class="main_content">
     	    <form action="" method="post">
     	        <h1 class="legend">Account Details</h1>
@@ -53,6 +45,6 @@
     	        </div>
     	    </form>
     	</div>
-    	<footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
+    	<?php placeFooter(); ?>
     </body>
 </html>

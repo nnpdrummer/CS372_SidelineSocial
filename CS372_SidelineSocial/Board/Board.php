@@ -1,3 +1,6 @@
+<?php
+    require '../Menu.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,16 +10,7 @@
         <script src="Board.js"></script>
     </head>
     <body>
-         <div class="navbar">
-            <h1 class="banner"></h1>
-            <ul class="menu">
-                <li class="home"><a href=../Main/Main.html>Home</a></li>
-                <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
-                <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-                <li class="login"><a href=../Login/Login.php>Login</a></li>
-                <li class="register"><a href=../Register/Register.html>Register</a></li>
-            </ul>
-        </div>
+        <?php fillMenu(); ?>
         <div class="board_title">
             <h1>
                 Title of the Board
@@ -35,30 +29,30 @@
                     </tr>
                     <tr>
                         <td id="thread_link">
-                            <a href=../Threads/Threads.html>News Flash: The Patriots still suck!</a>
+                            <a href=../Threads/Threads.php>News Flash: The Patriots still suck!</a>
                         </td>
-                        <td id="poster_link"><a href="../UserProfile/UserProfile.html">Jim Bob V</a></td>
+                        <td id="poster_link"><a href="../UserProfile/UserProfile.php">Jim Bob V</a></td>
                         <td>09/28/2017</td>
                     </tr>
                     <tr id="even">
                         <td id="thread_link">
-                            <a href=../Threads/Threads.html>Kareem Hunt for president???</a>
+                            <a href=../Threads/Threads.php>Kareem Hunt for president???</a>
                         </td>
-                        <td id="poster_link"><a href="../UserProfile/UserProfile.html">Cool Rad Man</a></td>
+                        <td id="poster_link"><a href="../UserProfile/UserProfile.php">Cool Rad Man</a></td>
                         <td>09/28/2017</td>
                     </tr>
                     <tr>
                         <td id="thread_link">
-                            <a href=../Threads/Threads.html>Another Thread</a>
+                            <a href=../Threads/Threads.php>Another Thread</a>
                         </td>
-                        <td id="poster_link"><a href="../UserProfile/UserProfile.html">Scooter</a></td>
+                        <td id="poster_link"><a href="../UserProfile/UserProfile.php">Scooter</a></td>
                         <td>05/08/2015</td>
                     </tr>
                     <tr id="even">
                         <td id="thread_link">
-                            <a href=../Threads/Threads.html>Who are you?</a>
+                            <a href=../Threads/Threads.php>Who are you?</a>
                         </td>
-                        <td id="poster_link"><a href="../UserProfile/UserProfile.html">Cool Rad Man</a></td>
+                        <td id="poster_link"><a href="../UserProfile/UserProfile.php">Cool Rad Man</a></td>
                         <td>09/28/2017</td>
                     </tr>
                 </tbody>
@@ -71,6 +65,6 @@
             <input type="button" value="Prev" id="nav_button">
             <input type="button" value="Next" id="nav_button">
         </div>
-        <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
+        <?php placeFooter(); ?>
     </body>
 </html>

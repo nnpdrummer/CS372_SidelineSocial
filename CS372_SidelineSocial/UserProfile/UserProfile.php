@@ -1,3 +1,6 @@
+<?php
+    require '../Menu.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,16 +11,7 @@
     	<link rel="stylesheet" type="text/css" href="../Menu.css" />
     </head>
     <body>
-        <div class="navbar">
-            <h1 class="banner"></h1>
-            <ul class="menu">
-                <li class="home"><a href=../Main/Main.html>Home</a></li>
-                <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
-                <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-                <li class="login"><a href=../Login/Login.php>Login</a></li>
-                <li class="register"><a href=../Register/Register.html>Register</a></li>
-            </ul>
-        </div>
+        <?php fillMenu(); ?>
         <div class="profile">
             <div class="top">
                 <div class="picture">
@@ -37,6 +31,6 @@
                 <textarea readonly>I love CS372 & fantasy football!</textarea>
             </div>
         </div>
-        <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
+        <?php placeFooter(); ?>
     </body>
 </html>

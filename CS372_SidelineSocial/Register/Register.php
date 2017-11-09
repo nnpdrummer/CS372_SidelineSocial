@@ -1,3 +1,6 @@
+<?php
+    require '../Menu.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,19 +10,10 @@
     	<script type="text/javascript" src="Register.js"></script>
     </head>
     <body>
-        <div class="navbar">
-            <h1 class="banner"></h1>
-            <ul class="menu">
-                <li class="home"><a href=../Main/Main.html>Home</a></li>
-                <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
-                <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-                <li class="login"><a href=../Login/Login.php>Login</a></li>
-                <li class="register"><a href=../Register/Register.html>Register</a></li>
-            </ul>
-        </div>
+        <?php fillMenu(); ?>
     	<h1>Sign up for a new account:</h1>
     	<h2>Already have an account? Login 
-    	    <a href="../Login/Login.html">here</a> instead!</h2>
+    	    <a href="../Login/Login.php">here</a> instead!</h2>
 	    <div class="main_content">
     	    <form onsubmit="return verify(this);" action="../Main/UserMain.html">
      		    <h1 class="legend">Account Registration</h1>
@@ -38,6 +32,6 @@
         	    </div>
         	</form>
     	</div>
-    	<footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
+    	<?php placeFooter(); ?>
     </body>
 </html>

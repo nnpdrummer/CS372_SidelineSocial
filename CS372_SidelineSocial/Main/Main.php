@@ -1,3 +1,6 @@
+<?php
+    require '../Menu.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,16 +9,7 @@
 	    <link rel="stylesheet" type="text/css" href="../Menu.css" />
     </head>
     <body>
-        <div class="navbar">
-            <h1 class="banner"></h1>
-            <ul class="menu">
-                <li class="home"><a href=../Main/Main.html>Home</a></li>
-                <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
-                <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-                <li class="login"><a href=../Login/Login.php>Login</a></li>
-                <li class="register"><a href=../Register/Register.html>Register</a></li>
-            </ul>
-        </div>
+        <?php fillMenu(); ?>
         <h1>Welcome to Sideline Social!</h1>
         <h3>The best fantasy football forum this side of the endzone.</h3>
         <section>
@@ -28,28 +22,28 @@
                         </tr>
                         <tr>
                             <td>
-                                <a href="../Board/Board.html">Main Discussion Board 1</a>
+                                <a href="../Board/Board.php">Main Discussion Board 1</a>
                                 <p>Description of category of threads...</p>
                             </td>
                             <td>09/28/2017</td>
                         </tr>
                         <tr id="even">
                             <td>
-                                <a href="../Board/Board.html">Main Discussion Board 2</a>
+                                <a href="../Board/Board.php">Main Discussion Board 2</a>
                                 <p>Description of category of threads...</p>
                             </td>
                             <td>09/27/2017</td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="../Board/Board.html">Main Discussion Board 3</a>
+                                <a href="../Board/Board.php">Main Discussion Board 3</a>
                                 <p>Description of category of threads...</p>
                             </td>
                             <td>09/08/2017</td>
                         </tr>
                         <tr id="even">
                             <td>
-                                <a href="../Board/Board.html">Main Discussion Board 4</a>
+                                <a href="../Board/Board.php">Main Discussion Board 4</a>
                                 <p>Description of category of threads...</p>
                             </td>
                             <td>08/23/2017</td>
@@ -66,6 +60,6 @@
                 </ul>
             </aside>
         </section>
-        <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
+        <?php placeFooter(); ?>
     </body>
 </html>

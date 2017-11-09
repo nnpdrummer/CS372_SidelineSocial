@@ -1,3 +1,6 @@
+<?php
+    require '../Menu.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,27 +13,7 @@
     	<script src="UserControlPanel.js"></script>
     </head>
     <body>
-        <div class="navbar">
-            <h1 class="banner"></h1>
-            <ul class="menu">
-                <li class="home"><a href=../Main/UserMain.html>Home</a></li>
-                <li class="search_bar"><input class="search" type="text" placeholder="Search..." /></li>
-                <li class="search_icon"><button type="submit" class="searchButton"></button></li>
-                <li class="account_icon"><img width=20px src="../Images/user.ico" /></li>
-                <li class="account_name">
-                    <button onclick="showMenu()" class="account_button">Username</button>
-                    <div id="dropdown" class="account_menu">
-                        <a href="../UserProfile/UserProfile.html">View Profile</a>
-                        <br />
-                        <a href="../UserControlPanel/UserControlPanel.html">Edit Profile</a>
-                        <hr class="menu_divider" />
-                        <a href="../AdminControlPanel/AdminControlPanel.html">Admin Portal</a>
-                        <hr class="menu_divider" />
-                        <a href="../Logout/Logout.html">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <?php fillMenuLoggedIn(); ?>
         <div class="header">
             <h1>User Control Panel</h1>
         </div>
@@ -68,6 +51,6 @@
                 </form>
             </div>
         </div>
-        <footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>
+        <?php placeFooter(); ?>
     </body>
 </html>
