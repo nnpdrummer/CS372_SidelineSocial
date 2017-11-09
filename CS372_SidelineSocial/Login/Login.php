@@ -1,22 +1,16 @@
 <?php
-    //Connect to the database
-    $host = "127.0.0.1";
-    $user = "cghier";                     
-    $pass = "";                                  
-    $db = "main";                                  
-    $port = 3306;                                
-    
-    $connection = mysqli_connect($host, $user, $pass, $db, $port)or die(mysql_error());
+    require '../DBConnect.php';
     
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
         $password = $_POST["pass"];
-        $query = "SELECT * FROM users WHERE username = '$username'";
+        $query = "SELECT * FROM users WHERE username = '$username' AND password = password('$password')";
         $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
         if (!$row == null) {
-            if ($row['username'] === $username && $row['password'] === $password) {
-                header( 'Location: ../Main/UserMain.html' );
-            }
+            header( 'Location: ../Main/UserMain.html' );
+        }
+        else {
+            $error = true;
         }
     }
 ?>
@@ -51,6 +45,11 @@
         		   	<label for="pass">Enter your password: </label></br>
         	       	<input type=password name="pass" required placeholder="Your password..."/></br>
         		    <input class="submit" type=submit value="Submit" />
+        		    <?php
+        		        if ($error) {
+        		            echo "<div><h2><font color=red>Wrong username or password!</font></h2></div>";
+        		        }
+        		    ?>
     	        </div>
     	    </form>
     	</div>
