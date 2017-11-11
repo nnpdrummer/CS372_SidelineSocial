@@ -1,5 +1,9 @@
+body{
+    font-family: helvetica;
+}
+
 .banner {
-    background-image: url("Images/logo.jpg");
+    background-image: url("../Images/logo.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 100%;
@@ -33,7 +37,7 @@ ul.menu a:visited {
 }
 
 ul.menu a:hover {
-    color: white;
+    color: #e2ffe6;
     text-decoration: none;
 }
 
@@ -95,7 +99,7 @@ ul.menu a:hover {
 .searchButton {
     width: 13px;
     height: 13px;
-    background-image: url(Images/search.png);
+    background-image: url(../Images/search.png);
     background-size: contain;
     border: none;
     cursor: pointer;
@@ -140,7 +144,7 @@ ul.menu a:hover {
 
 footer {
     border: solid thin black;
-    box-shadow: 3px 3px 5px #777777;
+    box-shadow: 2px 2px 2px #777777;
     padding: 5px;
     background-color: #AA4444;
     color: white;

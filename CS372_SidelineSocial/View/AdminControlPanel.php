@@ -1,5 +1,5 @@
 <?php
-    require '../Menu.php';
+    require 'MenuTemplate.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,10 +7,10 @@
         <title>Administrator Control Panel</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="AdminControlPanel.css" />
-    	<link rel="stylesheet" type="text/css" href="../Menu.css" />
-    	<script type="text/javascript" src="../Menu.js"></script>
-    	<script src="AdminControlPanel.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/AdminControlPanel.css" />
+    	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
+    	<script src="../Javascript/Menu.js"></script>
+    	<script src="../Javascript/AdminControlPanel.js"></script>
     </head>
     <body>
         <?php fillMenuLoggedIn(); ?>
@@ -23,8 +23,8 @@
                 <form id="selectUserForm">
                     <input type="search" id="selectUser" placeholder="Select User..."/> <br/>
                     <p id="selectUserError"></p>
-                    <input type="button" id="ban" value="BAN"/ onclick="validate(this);"/>
-                    <input type="button" id="promote" value="PROMOTE"/ onclick="validate(this);">
+                    <input type="button" id="ban" value="BAN" onclick="validate(this);"/>
+                    <input type="button" id="promote" value="PROMOTE" onclick="validate(this);">
                 </form>
             </div>
         </div>

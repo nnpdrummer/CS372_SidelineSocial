@@ -13,35 +13,38 @@ h1 {
     font-size: 170%;
     margin-bottom: 20px;
 }
- 
+
 h2 {
     font-size: 100%;
     text-align: center;
-    margin-bottom: 3%;
 }
-    
-.main_content {
+    	    
+legend {
+    text-align: left;
+}
+    	    
+div {
     display: block;
+}
+
+.main_content{
     margin: 0% auto 5% auto;
     border: solid;
-    box-shadow: 3px 3px 5px #777777;
-    background-color: #ffbdb5;
+    box-shadow: 2px 2px 2px #777777;
+    background-color: #fccccc;
     width: 50%;
 }
 
-.register_content {
-    margin: 0% 2% 2%;
+.login_content{
+    margin: 0% 2% 2% ;
+    overflow: hidden;
 }
-
-.button {
-    text-align: right;
-}
-    	    
-label {
+    	   
+label{
     font-size: 130%;
 }
 
-#email, #username, #pass1, #pass2{
+input[type="password"], #username{
     width: 100%;
     border-radius: 10px;
     border: none;
@@ -53,21 +56,21 @@ label {
     box-shadow: 1px 1px 1px #777777;
 }
 
-#email:focus, #username:focus, #pass1:focus, #pass2:focus{
+input[type="password"]:focus, #username:focus{
     transition: .5s;
     background-color: #e2ffe6;
     outline: none !important;
     box-shadow: 0 0 10px #e2ffe6;
 }
-    	    
-.submit {
+
+.submit{
     margin-top: 5px;
-    padding: 5px 5px;
-    box-shadow: 1px 1px 1px #777777;
+    padding: 10px 50px;
     font-size: large;
-    border: thin solid;
+    border: thin solid #fccccc;
     background-color: #ffefed;
     cursor: pointer;
+    float: right;
 }
     	    
 .submit:hover {

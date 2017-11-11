@@ -1,21 +1,21 @@
 <?php
-    require '../Menu.php';
+    require 'MenuTemplate.php';
 ?>
 <!DOCTYPE html>
 <html>
     <head>
     	<title>Please register an account</title>
-    	<link rel="stylesheet" type="text/css" href="Register.css" />
-    	<link rel="stylesheet" type="text/css" href="../Menu.css" />
-    	<script type="text/javascript" src="Register.js"></script>
+    	<link rel="stylesheet" type="text/css" href="../CSS/Register.css" />
+    	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
+    	<script src="../Javascript/Register.js"></script>
     </head>
     <body>
         <?php fillMenu(); ?>
     	<h1>Sign up for a new account:</h1>
     	<h2>Already have an account? Login 
-    	    <a href="../Login/Login.php">here</a> instead!</h2>
+    	    <a href="Login.php">here</a> instead!</h2>
 	    <div class="main_content">
-    	    <form onsubmit="return verify(this);" action="../Main/UserMain.html">
+    	    <form onsubmit="return verify(this);" action="UserMain.php">
      		    <h1 class="legend">Account Registration</h1>
         		<div class="register_content">
             	    <label>Your email address: </label></br>

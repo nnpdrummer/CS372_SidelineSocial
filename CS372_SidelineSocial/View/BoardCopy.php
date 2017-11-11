@@ -15,18 +15,27 @@
             <h1>
                 Title of the Board
             </h1>
-            <a href="#create_thread">
-                <input type="button" value="+ Create New Thread" id="new_thread_button" onclick="revealNewThreadGUI();">
-            </a>
+            
         </div>
         <div class="main_content">
             <table class="thread_list">
-                <tbody>
+                <thead>
                     <tr class="head">
                         <th>Topic</th>
                         <th>Original Poster</th>
                         <th>Latest Post Date</th>
                     </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td class="table_footer" colspan="3">
+                             <a href="#create_thread">
+                                <input type="button" value="+ Create New Thread" id="new_thread_button" onclick="revealNewThreadGUI();">
+                            </a>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
                     <tr>
                         <td id="thread_link">
                             <a href=../Threads/Threads.php>News Flash: The Patriots still suck!</a>
@@ -56,6 +65,7 @@
                         <td>09/28/2017</td>
                     </tr>
                 </tbody>
+                
             </table>
         </div>
         <div class="create_thread" id="create_thread">

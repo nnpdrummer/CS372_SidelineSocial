@@ -4,11 +4,11 @@
         "<div class='navbar'>
             <h1 class='banner'></h1>
             <ul class='menu'>
-                <li class='home'><a href=../Main/Main.php>Home</a></li>
+                <li class='home'><a href='Main.php'>Home</a></li>
                 <li class='search_bar'><input class='search' type='text' placeholder='Search...' /></li>
                 <li class='search_icon'><button type='submit' class='searchButton'></button></li>
-                <li class='login'><a href=../Login/Login.php>Login</a></li>
-                <li class='register'><a href=../Register/Register.php>Register</a></li>
+                <li class='login'><a href='Login.php'>Login</a></li>
+                <li class='register'><a href='Register.php'>Register</a></li>
             </ul>
         </div>"
         );
@@ -19,19 +19,19 @@
         "<div class='navbar'>
             <h1 class='banner'></h1>
             <ul class='menu'>
-                <li class='home'><a href=../Main/UserMain.php>Home</a></li>
+                <li class='home'><a href='UserMain.php'>Home</a></li>
                 <li class='search_bar'><input class='search' type='text' placeholder='Search...' /></li>
                 <li class='search_icon'><button type='submit' class='searchButton'></button></li>
                 <li class='account_name'>
                     <button onclick='showMenu()' class='account_button'>Username</button>
                     <div id='dropdown' class='account_menu'>
-                        <a href='../UserProfile/UserProfile.php'>View Profile</a>
+                        <a href='UserProfile.php'>View Profile</a>
                         <br />
-                        <a href='../UserControlPanel/UserControlPanel.php'>Edit Profile</a>
+                        <a href='UserControlPanel.php'>Edit Profile</a>
                         <hr class='menu_divider' />
-                        <a href='../AdminControlPanel/AdminControlPanel.php'>Admin Portal</a>
+                        <a href='AdminControlPanel.php'>Admin Portal</a>
                         <hr class='menu_divider' />
-                        <a href='../Logout/Logout.php'>Logout</a>
+                        <a href='Logout.php'>Logout</a>
                     </div>
                 </li>
             </ul>

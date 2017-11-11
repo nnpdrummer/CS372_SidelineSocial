@@ -1,5 +1,5 @@
 <?php
-    require '../Menu.php';
+    require 'MenuTemplate.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,10 +7,10 @@
         <title>USERNAME Control Panel</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="UserControlPanel.css" />
-    	<link rel="stylesheet" type="text/css" href="../Menu.css" />
-    	<script type="text/javascript" src="../Menu.js"></script>
-    	<script src="UserControlPanel.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/UserControlPanel.css" />
+    	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
+    	<script src="../Javascript/Menu.js"></script>
+    	<script src="../Javascript/UserControlPanel.js"></script>
     </head>
     <body>
         <?php fillMenuLoggedIn(); ?>

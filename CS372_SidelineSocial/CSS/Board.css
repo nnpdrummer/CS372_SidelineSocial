@@ -22,50 +22,21 @@ h1{
    width: 500px;
 }
 
-#new_thread_button{
-    float: right;
-    margin-top: 36px;
-    margin-right: 11%;
-    padding: 10px 50px;
-    font-size: large;
-    border: thin solid;
-    box-shadow: 1px 1px 1px #777777;
-    background-color: #ffefed;
-    cursor: pointer;
-}
-
-#disabled_button{
-    float: right;
-    margin-top: 36px;
-    margin-right: 11%;
-    padding: 10px 50px;
-    font-size: large;
-    border: thin solid;
-    box-shadow: 1px 1px 1px #777777;
-    background-color: #ffefed;
-    cursor: pointer;
-    cursor: default;
-}
-
-#new_thread_button:hover, #nav_button:hover{
-    transition: .5s;
-    background-color: #e2ffe6;
-}
-
 /*
     Main - Thread List
 */
 
 .main_content{
-    margin: 0% 5% 20px 5%;
-    border: solid thin black;
-    box-shadow: 3px 3px 5px #777777;
+    margin: 0% 5% 0px 5%;
+    box-shadow: 2px 2px 2px #777777;
     padding: .1%;
     background-color: black;
 }
 
 table{
     width: 100%;
+    border: medium solid black;
+    border-collapse: collapse;
 }
 
 th{
@@ -74,6 +45,7 @@ th{
     background-color: #AA4444;
     font-size: x-large;
     color: white;
+    
 }
 
 #topic{
@@ -81,7 +53,7 @@ th{
 }
 
 tr{
-    background-color: #ffbdb5;
+    background-color: #fccccc;
 }
 
 tr:hover, #even:hover{
@@ -90,7 +62,7 @@ tr:hover, #even:hover{
 }
 
 #even{
-    background-color: #ffefed;
+    background-color: white;
 }
 
 td{
@@ -98,11 +70,42 @@ td{
     padding-bottom: 20px;
     padding-left: 5px;
     font-size: large;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }
 
-table, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
+.table_footer{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.table_footer:hover{
+    background-color: #fccccc;
+}
+
+#new_thread_button{
+    float: right;
+    padding: 10px 50px;
+    font-size: large;
+    border: thin solid #fccccc;
+    background-color: #ffefed;
+    cursor: pointer;
+}
+
+#disabled_button{
+    float: right;
+    padding: 10px 50px;
+    font-size: large;
+    border: thin solid #fccccc;
+    background-color: #ffefed;
+    cursor: pointer;
+    cursor: default;
+}
+
+#new_thread_button:hover, #nav_button:hover, #post_button:hover{
+    transition: .5s;
+    background-color: #e2ffe6;
 }
 
 #thread_link a{
@@ -133,7 +136,7 @@ table, th, td{
 }
 
 #nav_button{
-    padding:5px 5px;
+    padding: 10px 10px;
     box-shadow: 1px 1px 1px #777777;
     font-size: large;
     border: thin solid;
@@ -147,10 +150,10 @@ table, th, td{
 
 .create_thread{
     visibility: hidden;
-    border: solid medium black;
-    box-shadow: 3px 3px 5px #777777;
-    background-color: #ffbdb5;
-    margin: 40px 5% 20px 5%;
+    border: solid thick black;
+    box-shadow: 2px 2px 2px #777777;
+    background-color: #fccccc;
+    margin: 20px 5% 20px 5%;
     padding: 0%;
     overflow: hidden;
 }
@@ -181,22 +184,29 @@ label{
 #post_content{
     width: 99%;
     height: 100px;
-    resize: vertical;
-    border: thin solid;
-    box-shadow: 1px 1px 1px #777777;
+    resize: none;
+    border: solid thin #fccccc;
 }
 
-#post_content:focus, #thread_title:focus{
+#thread_title:focus{
+    transition: .5s;
+    outline: none;
+    background-color: #e2ffe6;
+}
+
+#post_content:focus{
     transition: .5s;
     outline-color: #e2ffe6;
     background-color: #e2ffe6;
 }
 
 #post_button{
-    padding:5px 5px;
-    box-shadow: 1px 1px 1px #777777;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 10px 50px;
     font-size: large;
-    border: thin solid;
+    border: thin solid #fccccc;
     background-color: #ffefed;
     cursor: pointer;
     float: right;

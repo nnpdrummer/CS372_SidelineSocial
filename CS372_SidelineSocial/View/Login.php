@@ -1,6 +1,6 @@
 <?php
-    require '../DBConnect.php';
-    require '../Menu.php';
+    require '../Model/DBConnect.php';
+    require 'MenuTemplate.php';
     
     if (isset($_POST["username"])) {
         $username = $connection->real_escape_string($_POST["username"]);
@@ -8,7 +8,7 @@
         $query = "SELECT * FROM users WHERE username = '$username' AND password = password('$password')";
         $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
         if (!$row == null) {
-            header( 'Location: ../Main/UserMain.php' );
+            header( 'Location: UserMain.php' );
         }
         else {
             $error = true;
@@ -20,14 +20,14 @@
 <html>
     <head>
     	<title>Please register an account</title>
-    	<link rel="stylesheet" type="text/css" href="Login.css" />
-    	<link rel="stylesheet" type="text/css" href="../Menu.css" />
+    	<link rel="stylesheet" type="text/css" href="../CSS/Login.css" />
+    	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
     </head>
     <body>
         <?php fillMenu(); ?>
     	<h1>Login to your account:</h1>
     	<h2>Don't have an account? Sign up for a new account 
-    	    <a href="../Register/Register.php">here</a>!</h2>
+    	    <a href="Register.php">here</a>!</h2>
     	<div class="main_content">
     	    <form action="" method="post">
     	        <h1 class="legend">Account Details</h1>

@@ -18,8 +18,8 @@ h1{
 .main_content{
     margin: 0% auto 5% auto;
     border: solid;
-    box-shadow: 3px 3px 5px #777777;
-    background-color: #ffbdb5;
+    box-shadow: 2px 2px 2px #777777;
+    background-color: #fccccc;
     width: 50%;
     min-width: 320px;
 }
@@ -71,10 +71,9 @@ input[type="file"]{
 
 input[type="button"]{
     float: right;
-    padding:5px 5px;
-    box-shadow: 1px 1px 1px #777777;
+    padding:10px 50px;
     font-size: large;
-    border: thin solid;
+    border: thin solid black;
     background-color: #ffefed;
     cursor: pointer;
 }
@@ -95,16 +94,16 @@ textarea{
     width: 99%;
     height: 150px;
     box-shadow: 1px 1px 1px #777777;
-    border: solid thin;
+    resize: none;
+    border: solid thin black;
     margin: 0% auto 0% auto;
 }
 
 #saveChanges{
     margin-top: 5px;
-    padding:5px 5px;
-    box-shadow: 1px 1px 1px #777777;
+    padding: 10px 50px;
     font-size: large;
-    border: thin solid;
+    border: thin solid black;
     background-color: #ffefed;
     cursor: pointer;
 }

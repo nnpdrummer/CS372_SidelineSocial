@@ -1,5 +1,5 @@
 <?php
-    require '../Menu.php';
+    require 'MenuTemplate.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,8 +7,8 @@
         <title>USERNAME Profile</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="UserProfile.css" />
-    	<link rel="stylesheet" type="text/css" href="../Menu.css" />
+        <link rel="stylesheet" type="text/css" href="../CSS/UserProfile.css" />
+    	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
     </head>
     <body>
         <?php fillMenu(); ?>

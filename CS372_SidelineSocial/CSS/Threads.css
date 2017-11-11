@@ -28,9 +28,6 @@ h1{
     box-shadow: 1px 1px 1px #777777;
     background-color: #ffefed;
     cursor: pointer;
-    /*#DFDFDF
-    #ffefed
-    */
 }
 
 #disabled_button{
@@ -45,15 +42,19 @@ h1{
     cursor: default;
 }
 
-#new_post_button:hover, #nav_button:hover, #post_button:hover{
+#new_post_button:hover, #nav_button:hover, #post_button:hover,#new_post_button_content:hover{
     transition: .5s;
     background-color: #e2ffe6;
 }
 
+/*
+    First Post
+*/
+
 .main_content{
     border: solid medium black;
     box-shadow: 3px 3px 5px #777777;
-    background-color: #ffbdb5;
+    background-color: #fccccc;
     margin: 0% 5% 20px 5%;
     padding: 0%;
     overflow: hidden;
@@ -89,17 +90,29 @@ h3{
     width: 100%;
 }
 
+#new_post_button_content{
+    float: right;
+    padding: 10px 50px;
+    font-size: large;
+    border: none;/*#fccccc;*/
+    background-color: #ffefed;
+    cursor: pointer;
+}
+
 .post_content{
     padding: 1%;
     text-align: justify;
 }
+
+/*
+    Other Posts
+*/
 
 .other_posts{
     list-style: none;
     padding: 0px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 5%;
 }
 
 .other_content{
@@ -107,15 +120,15 @@ h3{
     border-right: solid medium black;
     border-bottom: solid medium black;
     border-top: none;
-    box-shadow: 3px 3px 5px #777777;
-    background-color: #ffbdb5;
+    box-shadow: 2px 2px 2px #777777;
+    background-color: #fccccc;
     padding: 0%;
     overflow: hidden;
 }
 
 .post_content_space:hover, .first_post_header:hover, .other_post_header:hover{
     transition: .5s;
-    background-color: #ffefed;
+    background-color: white;
 }
 
 img:hover, h3:hover{
@@ -134,14 +147,17 @@ img:hover, h3:hover{
     overflow: hidden;
 }
 
+/*
+    Page Navigation
+*/
+
 .Page_Navigation{
     float: right;
-    margin-right: 6%;
-    margin-top: 0%;
+    margin-right: 5%;
 }
 
 #nav_button{
-    padding:5px 5px;
+    padding: 10px 10px;
     box-shadow: 1px 1px 1px #777777;
     font-size: large;
     border: thin solid;
@@ -149,11 +165,15 @@ img:hover, h3:hover{
     cursor: pointer;
 }
 
+/*
+    Create Post
+*/
+
 .create_post{
     visibility: hidden;
     border: solid medium black;
-    box-shadow: 3px 3px 5px #777777;
-    background-color: #ffbdb5;
+    box-shadow: 2px 2px 2px #777777;
+    background-color: #fccccc;
     margin: 40px 5% 20px 5%;
     padding: 0%;
     overflow: hidden;
@@ -173,9 +193,8 @@ label{
 #reply_post{
     width: 99%;
     height: 100px;
-    resize: vertical;
-    border: thin solid;
-    box-shadow: 1px 1px 1px #777777;
+    resize: none;
+    border: thin solid #fccccc;
 }
 
 #reply_post:focus{
@@ -185,10 +204,10 @@ label{
 }
 
 #post_button{
-    padding:5px 5px;
-    box-shadow: 1px 1px 1px #777777;
+    margin-right: 10px;
+    padding: 10px 50px;
     font-size: large;
-    border: thin solid;
+    border: thin solid #fccccc;
     background-color: #ffefed;
     cursor: pointer;
     float: right;

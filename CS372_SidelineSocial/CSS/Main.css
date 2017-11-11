@@ -6,7 +6,7 @@ body {
 .main_content {
     margin-left: 5%;
     margin-right: 5%;
-    box-shadow: 3px 3px 5px #777777;
+    box-shadow: 2px 2px 2px #777777;
     padding: .1%;
     background-color: black;
     width: 60%;
@@ -31,6 +31,8 @@ p {
 
 table {
     width: 100%;
+    border: medium solid black;
+    border-collapse: collapse;
 }
 
 th {
@@ -46,27 +48,25 @@ th {
 }
 
 tr {
-    background-color: #ffbdb5;
+    background-color: #fccccc;
 }
 
 tr:hover, #even:hover {
-    background-color:#e2ffe6;
+    background-color: #e2ffe6;
 }
 
 #even {
-    background-color: #ffefed;
+    background-color: white;
 }
 
 td {
     padding-top: 20px;
     padding-left: 5px;
     font-size: large;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
 
 table a {
     color: black;    
@@ -82,8 +82,8 @@ table a:visited {
 }
 
 aside {
-    border: solid thin black;
-    box-shadow: 3px 3px 5px #777777;
+    border: solid medium black;
+    box-shadow: 2px 2px 2px #777777;
     padding: .1%;
     background-color: #AA4444;
     color: white;

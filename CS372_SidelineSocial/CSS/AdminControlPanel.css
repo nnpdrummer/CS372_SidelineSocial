@@ -12,14 +12,14 @@ h1{
     overflow: hidden;
     font-size: 300%;
     display: inline-block;
-    width: 600px;
+    width: 800px;
 }
 
 .main_content{
     margin: 0% auto 5% auto;
     border: solid;
-    box-shadow: 3px 3px 5px #777777;
-    background-color: #ffbdb5;
+    box-shadow: 2px 2px 2px #777777;
+    background-color: #fccccc;
     width: 50%;
 }
 
@@ -47,10 +47,9 @@ input[type="search"]{
 }
 
 input[type="button"]{
-    padding:5px 5px;
-    box-shadow: 1px 1px 1px #777777;
+    padding: 10px 50px;
     font-size: large;
-    border: thin solid;
+    border: thin solid #fccccc;
     background-color: #ffefed;
     cursor: pointer;
 }
