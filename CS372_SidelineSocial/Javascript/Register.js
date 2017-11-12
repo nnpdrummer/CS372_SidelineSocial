@@ -7,7 +7,7 @@ function verify(f) {
 		return false;
 	}
 	if (f.pass1.value != f.pass2.value) {
-	    alert("The passwords do not match!" + length);
+	    alert("The passwords do not match!");
 	    return false;
 	}
 	if (length > 16) {

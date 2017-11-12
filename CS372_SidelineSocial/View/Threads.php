@@ -3,10 +3,7 @@
     require '../Controller/ThreadsController.php';
     session_start();
     
-    if(checkIfThreadExists() == false){
-        header('Location: Main.php');
-    }
-    
+    createThreadInfo();
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +22,6 @@
                 echo(getUnregisteredNavbar()); 
             }
         ?>
-        
     <div class="thread_title">
         <h1><?php echo(getThreadTitle()); ?></h1>
         <a href="#create_post">
@@ -41,102 +37,7 @@
     <!-- Other posts content -->
     
     <ul class="other_posts">
-        <li class="other_post_0">
-            <div class="other_content">
-                <div class="other_post_header">
-                    <table>
-                        <tr>
-                            <th>
-                                <img width=20px src="../Images/user.ico" />
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h3 id="poster_link">
-                                    <a href="UserProfile.php"></a>
-                                </h3> 
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="post_content_space">
-                    <div class="post_content">
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="other_post_0">
-            <div class="other_content"><!-- Box around main thread content -->
-                <div class="other_post_header">
-                    <table>
-                        <tr>
-                            <th>
-                                <img width=20px src="../Images/user.ico" />
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h3 id="poster_link">
-                                    <a href="UserProfile.php"></a>
-                                </h3> 
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="post_content_space">
-                    <div class="post_content">
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="other_post_0">
-            <div class="other_content"><!-- Box around main thread content -->
-                <div class="other_post_header">
-                    <table>
-                        <tr>
-                            <th>
-                                <img width=20px src="../Images/user.ico" />
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h3 id="poster_link">
-                                    <a href="UserProfile.php"></a>
-                                </h3> 
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="post_content_space">
-                    <div class="post_content">
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="other_post_0">
-            <div class="other_content"><!-- Box around main thread content -->
-                <div class="other_post_header">
-                    <table>
-                        <tr>
-                            <th>
-                                <img width=20px src="../Images/user.ico" />
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h3 id="poster_link">
-                                    <a href="UserProfile.php"></a>
-                                </h3> 
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="post_content_space">
-                    <div class="post_content">
-                    </div>
-                </div>
-            </div>
-        </li>
+        <?php echo(getOtherPosts()); ?>
     </ul>
     <div class="create_post" id="create_post">
     </div>

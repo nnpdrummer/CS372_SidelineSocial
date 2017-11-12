@@ -1,8 +1,8 @@
 <?php
 require '../Model/ThreadsModel.php';
 
-function checkIfThreadExists(){
-    return doesThreadExist();
+function createThreadInfo(){
+    parseThreadInfo();
 }
 
 function getThreadTitle(){

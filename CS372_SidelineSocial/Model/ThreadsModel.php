@@ -1,100 +1,72 @@
 <?php
 require_once 'DBConnect.php';
 
-function  doesThreadExist(){
+$threadName = "";
+$threadInfo = array();
+
+function parseThreadInfo(){
+    global $threadName, $threadInfo;
     $connection = connectToDB();
+    $threadid = $connection->real_escape_string($_GET['threadid']);
     
-    if (isset($_GET['threadid'])) {
-        $threadid = $connection->real_escape_string($_GET['threadid']);
+    $sql = sprintf("SELECT content, op, DATE_FORMAT(postdate,'%%b %%e %%Y %%r') as formatDate, t.threadid, threadname FROM posts p INNER JOIN threads t WHERE t.threadid = '%s' and p.threadid = '%s' ORDER BY postdate ASC", $threadid, $threadid);
+    $result = $connection->query($sql);
+    $connection->close();
+    
+    if($result->num_rows > 0){
+        $threadExists = true;
         
-        $sql = sprintf("SELECT * FROM threads WHERE threadid = '%s' LIMIT 1;" , $threadid);
-        $result = $connection->query($sql);
-        $connection->close();
-        
-        if ($result->num_rows > 0) {
-            return true;
-        }
-        else{
-            return false;
+        while($row = $result->fetch_assoc()){
+            $threadName = $row["threadname"];
+            array_push($threadInfo, array('op' => $row["op"], 'date' => $row["formatDate"], 'content' => $row["content"]));
         }
     }
     else{
-        return false;
+        header('Location: Main.php');
     }
 }
 
 function getThreadNameFromDB(){
-    $connection = connectToDB();
-    $threadid = $connection->real_escape_string($_GET['threadid']);
-    
-    $sql = sprintf("SELECT threadname FROM threads WHERE threadid = '%s'", $threadid);
-    $result = $connection->query($sql);
-    $connection->close();
-    
-    $title = "";
-    if($result->num_rows > 0){
-        $row = $result->fetch_assoc();
-        $title = $row["threadname"];
-    }
-    return $title;
+    global $threadName;
+    return $threadName;
 }
 
+/*
+    Need to add image populating when we start getting users with images.
+*/
+
 function buildFirstPost(){
-    $connection = connectToDB();
-    $threadid = $connection->real_escape_string($_GET['threadid']);
-    
-    $sql = sprintf("SELECT username, content, DATE_FORMAT(postdate,'%%b %%e %%Y %%r') as formatDate FROM threads WHERE threadid = '%s' ORDER BY latestupdate ASC", $threadid);
-    $result = $connection->query($sql);
-    $connection->close();
-    
+    global $threadInfo;
     $firstPost = "";
-    if($result->num_rows > 0){
-        $row = $result->fetch_assoc();
-        $firstPost .= '<div class="first_post_header">' .
+    
+    $firstPost .= '<div class="first_post_header">' .
                             '<table><tr><th>' .
                                 '<img width=20px src="../Images/user.ico" />' .
                             '</th></tr> ' .
                             '<tr><td><h3 id="poster_link">' .
-                                '<a href="UserProfile.php">'. $row["username"] .'</a>' .
+                                '<a href="UserProfile.php">'. $threadInfo[0]['op'] .'</a>' .
                             '</h3></td></tr>' .
-                            '<tr><td><h3 id="date_posted">' .
-                                '<a href="UserProfile.php">'. $row["formatDate"] .'</a>' .
+                            '<tr><td><h3 id="date_posted">' . $threadInfo[0]['date'] .
                             '</h3></td></tr></table>' .
                         '</div>' .
                         '<div class="post_content_space">' .
-                            '<div class="post_content">'. $row["content"] .'</div>' .
+                            '<div class="post_content">'. $threadInfo[0]['content'] .'</div>' .
                         '</div>';
-    }
     return $firstPost;
 }
 
-/*
-
-<div class="first_post_header">
-    <table>
-        <tr>
-            <th>
-                <img width=20px src="../Images/user.ico" />
-            </th>
-        </tr>
-        <tr>
-            <td>
-                <h3 id="poster_link">
-                    <a href="UserProfile.php"></a>
-                </h3> 
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="post_content_space">
-    <div class="post_content">
-    </div>
-</div>
-
-*/
-
 function buildOtherPostsTable(){
+    global $threadInfo;
     
+    $otherPosts = "";
+    for($rowNum = 1; $rowNum < count($threadInfo); $rowNum++){
+        $otherPosts .= '<li class="other_post_0"><div class="other_content"><div class="other_post_header">' .
+                        '<table><tr><th>' . '<img width=20px src="../Images/user.ico" /> </th></tr>' .
+                        '<tr><td><h3 id="poster_link"><a href="UserProfile.php">' . $threadInfo[$rowNum]['op'] . '</a></h3></td></tr>' .
+                        '<tr><td><h3 id="date_posted">' . $threadInfo[$rowNum]['date'] . '</h3></td></tr></table></div>' .
+                        '<div class="post_content_space"><div class="post_content">' . $threadInfo[$rowNum]['content'] . '</div></div></div></li>';
+    }
+    return $otherPosts;
 }
 
 ?>
