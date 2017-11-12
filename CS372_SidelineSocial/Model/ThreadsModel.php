@@ -14,7 +14,6 @@ function parseThreadInfo(){
     $connection->close();
     
     if($result->num_rows > 0){
-        $threadExists = true;
         
         while($row = $result->fetch_assoc()){
             $threadName = $row["threadname"];

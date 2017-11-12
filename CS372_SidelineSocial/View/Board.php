@@ -3,9 +3,7 @@
     require '../Controller/BoardController.php';
     session_start();
     
-    if(checkIfBoardExists() == false){
-        header('Location: Main.php');
-    }
+    createBoardInfo();
 ?>
 
 <!DOCTYPE html>

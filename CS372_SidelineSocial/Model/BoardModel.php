@@ -1,70 +1,52 @@
 <?php
 require_once 'DBConnect.php';
 
-function doesBoardExist(){
+$boardName = "";
+$boardInfo = array();
+
+function parseThreadInfo(){
+    global $boardName, $boardInfo;
     $connection = connectToDB();
+    $categorynumber = $connection->real_escape_string($_GET['categorynumber']);
     
-    if (isset($_GET['categorynumber'])) {
-        $categorynumber = $connection->real_escape_string($_GET['categorynumber']);
+    $sql = sprintf("SELECT categoryname, threadid, threadname, op, DATE_FORMAT(t.latestupdate,'%%b %%e %%Y %%r') as formatDate FROM threads t INNER JOIN boards b WHERE t.categorynumber = '%s' and b.categorynumber = '%s' ORDER BY t.latestupdate DESC", $categorynumber, $categorynumber);
+    $result = $connection->query($sql);
+    $connection->close();
+    
+    if($result->num_rows > 0){
         
-        $sql = sprintf("SELECT * FROM boards WHERE categorynumber = '%s' LIMIT 1;" , $categorynumber);
-        $result = $connection->query($sql);
-        $connection->close();
-        
-        if ($result->num_rows > 0) {
-            return true;
+        while($row = $result->fetch_assoc()){
+            $boardName = $row["categoryname"];
+            array_push($boardInfo, array('threadid' => $row["threadid"], 'threadname' => $row["threadname"], 'op' => $row["op"], 'date' => $row["formatDate"]));
         }
-        else{
-            return false;
-        }
-    }
-    else{
-        return false;
     }
 }
 
 function getBoardNameFromDB(){
-     $connection = connectToDB();
-     $categorynumber = $connection->real_escape_string($_GET['categorynumber']);
-     
-     $sql = sprintf("SELECT categoryname FROM boards WHERE categorynumber = '%s'", $categorynumber);
-     $result = $connection->query($sql);
-     $connection->close();
-     
-     $boardName = "";
-     if($result->num_rows > 0){
-         $row = $result->fetch_assoc();
-         $boardName = $row["categoryname"];
-     }
+     global $boardName;
      return $boardName;
 }
 
 function buildThreadTable(){
-    $connection = connectToDB();
-    $categorynumber = $connection->real_escape_string($_GET['categorynumber']);
-    
-    $sql = sprintf("SELECT threadid, threadname, op, DATE_FORMAT(latestupdate,'%%b %%e %%Y %%r') as formatDate From threads WHERE categorynumber = '%s' ORDER BY latestupdate DESC", $categorynumber);
-    $result = $connection->query($sql);
-    $connection->close();
-    
-    $rowNum = 1;
+    global $boardInfo;
     $table = "";
-    if($result->num_rows > 0 ){
-        while($row = $result->fetch_assoc()) {
+    $boardInfoLength = count($boardInfo);
+    
+    if($boardInfoLength <= 0){
+        $table .= "<tr><td colspan='3' style='text-align: center'> Hmmm, there don't seem to be any threads here. Why not create your own?</td></tr>";
+    }
+    else{
+        for($rowNum = 0; $rowNum < $boardInfoLength; $rowNum++) {
             $table .= "<tr";
             
-            if($rowNum % 2 == 0){
+            if(($rowNum + 1) % 2 == 0){
                $table .= " id='even'";
             }
             
-            $table .= "><td id='thread_link'><a href='Threads.php?threadid=$row[threadid]'>" . $row["threadname"] . "</a></td>" .
-                        "<td id='poster_link'><a href='UserProfile.php'>" . $row["op"] . "</a></td>" .
-                        "<td>" . $row["formatDate"] . "</td></tr>";
-            ++$rowNum;
+            $table .= "><td id='thread_link'><a href='Threads.php?threadid=" . $boardInfo[$rowNum]['threadid'] . "'>". $boardInfo[$rowNum]["threadname"] . "</a></td>" .
+                        "<td id='poster_link'><a href='UserProfile.php'>" . $boardInfo[$rowNum]['op'] . "</a></td>" .
+                        "<td>" . $boardInfo[$rowNum]['date'] . "</td></tr>";
         }
-    }
-    else{
-        $table .= "<tr><td colspan='3' style='text-align: center'> Hmmm, there don't seem to be any threads here. Why not create your own?</td></tr>";
     }
     return $table;
 }
