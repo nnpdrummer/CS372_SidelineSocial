@@ -9,7 +9,6 @@
 	    <title>Welcome to Sideline Social!</title>
 	    <link rel="stylesheet" type="text/css" href="../CSS/Main.css" />
 	    <link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
-	    <script src="../Javascript/Menu.js"></script>
     </head>
     <body>
         <?php 

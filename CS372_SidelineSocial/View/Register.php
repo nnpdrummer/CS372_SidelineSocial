@@ -49,7 +49,7 @@
             	    <label>Select a username: </label></br>
             	   
             	    <?php if (isset($_POST["username"])): ?>
-            	        <input id="user" name="username" type=text required placeholder="Your username..." 
+            	        <input id="username" name="username" type=text required placeholder="Your username..." 
             	            value="<?= htmlspecialchars($_POST["username"]) ?>" /></br>
             	    <?php else: ?>
             	        <input id="username" name="username" type=text required placeholder="Your username..." /></br>

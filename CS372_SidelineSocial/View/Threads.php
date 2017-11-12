@@ -1,6 +1,12 @@
 <?php
     require '../Controller/MenuTemplateController.php';
+    require '../Controller/ThreadsController.php';
     session_start();
+    
+    if(checkIfThreadExists() == false){
+        header('Location: Main.php');
+    }
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +15,6 @@
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Threads.css" />
 		<link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
 		<script src="../Javascript/Threads.js"></script>
-		<script src="../Javascript/Menu.js"></script>
     </head>
     <body>
 	    <?php 
@@ -22,9 +27,7 @@
         ?>
         
     <div class="thread_title">
-        <h1>
-            Title of Thread
-        </h1>
+        <h1><?php echo(getThreadTitle()); ?></h1>
         <a href="#create_post">
             <input type="button" value="+ Create New Post" id="new_post_button" onclick="revealNewPostGUI();"/>
         </a>
@@ -33,26 +36,7 @@
     <!-- First Post Content-->
     
     <div class="main_content">
-        <div class="first_post_header">
-            <table>
-                <tr>
-                    <th>
-                        <img width=20px src="../Images/user.ico" />
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <h3 id="poster_link">
-                            <a href="UserProfile.php"></a>
-                        </h3> 
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="post_content_space">
-            <div class="post_content">
-            </div>
-        </div>
+        <?php echo(getFirstPost()); ?>
     </div>
     <!-- Other posts content -->
     

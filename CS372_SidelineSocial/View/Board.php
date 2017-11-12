@@ -15,7 +15,6 @@
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Board.css" />
         <link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
         <script src="../Javascript/Board.js"></script>
-        <script src="../Javascript/Menu.js"></script>
     </head>
     <body>
         <?php 

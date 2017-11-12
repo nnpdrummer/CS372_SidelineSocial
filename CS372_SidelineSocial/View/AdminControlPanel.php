@@ -24,7 +24,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../CSS/AdminControlPanel.css" />
     	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
-    	<script src="../Javascript/Menu.js"></script>
     	<script src="../Javascript/AdminControlPanel.js"></script>
     </head>
     <body>

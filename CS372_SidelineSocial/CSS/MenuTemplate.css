@@ -117,13 +117,18 @@ ul.menu a:hover {
 
 .account_menu {
     display: none;
+    right: 0;
     position: absolute;
-    width: 150px;
+    width: 130px;
     overflow: auto;
     background-color: #AA4444;
     font-size: 22px;
     border: solid thin black;
     border-top: none;
+}
+
+.account_name:hover .account_menu{
+    display: block;
 }
 
 .account_menu a:hover {

@@ -1,5 +1,5 @@
 <?php
-require '../Model/ThreadsModel.php'
+require '../Model/ThreadsModel.php';
 
 function checkIfThreadExists(){
     return doesThreadExist();

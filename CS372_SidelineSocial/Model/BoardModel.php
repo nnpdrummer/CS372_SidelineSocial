@@ -43,7 +43,7 @@ function buildThreadTable(){
     $connection = connectToDB();
     $categorynumber = $connection->real_escape_string($_GET['categorynumber']);
     
-    $sql = sprintf("SELECT threadname, op, DATE_FORMAT(latestupdate,'%%b %%e %%Y %%r') as formatDate From threads WHERE categorynumber = '%s' ORDER BY latestupdate DESC", $categorynumber);
+    $sql = sprintf("SELECT threadid, threadname, op, DATE_FORMAT(latestupdate,'%%b %%e %%Y %%r') as formatDate From threads WHERE categorynumber = '%s' ORDER BY latestupdate DESC", $categorynumber);
     $result = $connection->query($sql);
     $connection->close();
     
@@ -57,7 +57,7 @@ function buildThreadTable(){
                $table .= " id='even'";
             }
             
-            $table .= "><td id='thread_link'><a href='Threads.php'>" . $row["threadname"] . "</a></td>" .
+            $table .= "><td id='thread_link'><a href='Threads.php?threadid=$row[threadid]'>" . $row["threadname"] . "</a></td>" .
                         "<td id='poster_link'><a href='UserProfile.php'>" . $row["op"] . "</a></td>" .
                         "<td>" . $row["formatDate"] . "</td></tr>";
             ++$rowNum;
