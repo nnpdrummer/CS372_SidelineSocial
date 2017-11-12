@@ -1,5 +1,6 @@
 <?php
     require '../Controller/MenuTemplateController.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +10,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../CSS/UserProfile.css" />
     	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
+    	<script src="../Javascript/Menu.js"></script>
     </head>
     <body>
-        <?php echo(getUnregisteredNavbar()); ?>
+        <?php 
+            if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] === true) {
+                echo(getRegisteredNavbar()); 
+            }
+            else {
+                echo(getUnregisteredNavbar()); 
+            }
+        ?>
+        
         <div class="profile">
             <div class="top">
                 <div class="picture">

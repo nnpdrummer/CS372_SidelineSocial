@@ -1,5 +1,10 @@
 <?php
     require '../Controller/MenuTemplateController.php';
+    
+    session_start();
+    successfulLogout();
+    $_SESSION["authenticated"] = false;
+    session_destroy();
 ?>
 <!DOCTYPE html>
 <html>

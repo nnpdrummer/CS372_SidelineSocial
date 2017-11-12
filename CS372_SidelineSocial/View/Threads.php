@@ -1,5 +1,6 @@
 <?php
     require '../Controller/MenuTemplateController.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,9 +9,17 @@
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Threads.css" />
 		<link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
 		<script src="../Javascript/Threads.js"></script>
+		<script src="../Javascript/Menu.js"></script>
     </head>
     <body>
-	<?php echo(getUnregisteredNavbar()); ?>
+	    <?php 
+            if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] === true) {
+                echo(getRegisteredNavbar()); 
+            }
+            else {
+                echo(getUnregisteredNavbar()); 
+            }
+        ?>
         
     <div class="thread_title">
         <h1>

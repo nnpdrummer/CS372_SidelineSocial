@@ -1,8 +1,8 @@
 
 function validate(button){
     clearErrorMessage();
-    if(document.getElementById("selectUser").value == ""){
-        document.getElementById("selectUserError").innerHTML = "Please select a user!";
+    if(document.getElementById("username").value == ""){
+        document.getElementById("username").innerHTML = "Please select a user!";
         return false;
     }
     with(document.forms.selectUserForm){
@@ -16,14 +16,14 @@ function validate(button){
 }
 
 function clearErrorMessage(){
-    document.getElementById("selectUserError").innerHTML = "";
+    document.getElementById("username").innerHTML = "";
 }
 
 function banUser(){
     with(document.forms.selectUserForm){
         if(confirm('Are you sure you want to ban this user?')){
-            alert(document.getElementById("selectUser").value + " has been banned!");
-            document.getElementById("selectUser").value = "";
+            alert(document.getElementById("username").value + " has been banned!");
+            document.getElementById("username").value = "";
         }
     }
 }
@@ -31,8 +31,8 @@ function banUser(){
 function promoteUser(){
     with(document.forms.selectUserForm){
         if(confirm('Are you sure you want to promote this user?')){
-            alert(document.getElementById("selectUser").value + " has been promoted!");
-            document.getElementById("selectUser").value = "";
+            alert(document.getElementById("username").value + " has been promoted!");
+            document.getElementById("username").value = "";
         }
     }
 }

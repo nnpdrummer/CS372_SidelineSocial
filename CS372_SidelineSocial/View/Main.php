@@ -1,6 +1,7 @@
 <?php
     require '../Controller/MenuTemplateController.php';
     require '../Controller/MainController.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,9 +9,18 @@
 	    <title>Welcome to Sideline Social!</title>
 	    <link rel="stylesheet" type="text/css" href="../CSS/Main.css" />
 	    <link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
+	    <script src="../Javascript/Menu.js"></script>
     </head>
     <body>
-        <?php echo(getUnregisteredNavbar()); ?>
+        <?php 
+            if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] === true) {
+                echo(getRegisteredNavbar()); 
+            }
+            else {
+                echo(getUnregisteredNavbar()); 
+            }
+        ?>
+        
         <h1>Welcome to Sideline Social!</h1>
         <h3>The best fantasy football forum this side of the endzone.</h3>
         <section>

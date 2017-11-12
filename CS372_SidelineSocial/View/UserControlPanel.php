@@ -1,5 +1,6 @@
 <?php
     require '../Controller/MenuTemplateController.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,7 @@
     </head>
     <body>
         <?php echo(getRegisteredNavbar()); ?>
+        
         <div class="header">
             <h1>User Control Panel</h1>
         </div>

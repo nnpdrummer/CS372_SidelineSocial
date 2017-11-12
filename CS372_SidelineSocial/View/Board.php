@@ -1,6 +1,7 @@
 <?php
     require '../Controller/MenuTemplateController.php';
     require '../Controller/BoardController.php';
+    session_start();
     
     if(checkIfBoardExists() == false){
         header('Location: Main.php');
@@ -14,9 +15,17 @@
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Board.css" />
         <link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
         <script src="../Javascript/Board.js"></script>
+        <script src="../Javascript/Menu.js"></script>
     </head>
     <body>
-        <?php echo(getUnregisteredNavbar()); ?>
+        <?php 
+            if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] === true) {
+                echo(getRegisteredNavbar()); 
+            }
+            else {
+                echo(getUnregisteredNavbar()); 
+            }
+        ?>
         
         <!-- Title of Board -->
         <div class="board_title">
