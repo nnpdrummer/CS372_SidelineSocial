@@ -1,5 +1,5 @@
 <?php
-    require 'MenuTemplate.php';
+    require '../Controller/MenuTemplateController.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 		<script src="../Javascript/Threads.js"></script>
     </head>
     <body>
-	<?php fillMenu(); ?>
+	<?php echo(getUnregisteredNavbar()); ?>
         
     <div class="thread_title">
         <h1>
@@ -152,6 +152,6 @@
         <input type="button" value="Prev" id="nav_button">
         <input type="button" value="Next" id="nav_button">
     </div>
-    <?php placeFooter(); ?>
+    <?php echo(getFooter()); ?>
     </body>
 </html>

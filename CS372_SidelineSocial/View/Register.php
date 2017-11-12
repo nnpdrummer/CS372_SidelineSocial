@@ -1,5 +1,5 @@
 <?php
-    require 'MenuTemplate.php';
+    require '../Controller/MenuTemplateController.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
     	<script src="../Javascript/Register.js"></script>
     </head>
     <body>
-        <?php fillMenu(); ?>
+        <?php echo(getUnregisteredNavbar()); ?>
     	<h1>Sign up for a new account:</h1>
     	<h2>Already have an account? Login 
     	    <a href="Login.php">here</a> instead!</h2>
@@ -32,6 +32,6 @@
         	    </div>
         	</form>
     	</div>
-    	<?php placeFooter(); ?>
+    	<?php echo(getFooter()); ?>
     </body>
 </html>

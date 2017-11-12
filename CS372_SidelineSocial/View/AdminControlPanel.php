@@ -1,5 +1,5 @@
 <?php
-    require 'MenuTemplate.php';
+    require '../Controller/MenuTemplateController.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,7 @@
     	<script src="../Javascript/AdminControlPanel.js"></script>
     </head>
     <body>
-        <?php fillMenuLoggedIn(); ?>
+        <?php echo(getRegisteredNavbar()); ?>
         <div class="header">
             <h1>Administrator Control Panel</h1>
         </div>
@@ -28,6 +28,6 @@
                 </form>
             </div>
         </div>
-        <?php placeFooter(); ?>
+        <?php echo(getFooter()); ?>
     </body>
 </html>

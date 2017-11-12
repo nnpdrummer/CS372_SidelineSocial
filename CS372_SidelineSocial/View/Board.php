@@ -1,7 +1,12 @@
 <?php
-    require 'MenuTemplate.php';
-    require '../Model/DBConnect.php';
+    require '../Controller/MenuTemplateController.php';
+    require '../Controller/BoardController.php';
+    
+    if(checkIfBoardExists() == false){
+        header('Location: Main.php');
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,13 +16,12 @@
         <script src="../Javascript/Board.js"></script>
     </head>
     <body>
-        <?php fillMenu(); ?>
+        <?php echo(getUnregisteredNavbar()); ?>
         
         <!-- Title of Board -->
         <div class="board_title">
-            <h1></h1>
+            <h1><?php echo(getBoardName()); ?></h1>
         </div>
-        
         <!-- Main Content -->
         <div class="main_content">
             <table class="thread_list">
@@ -37,37 +41,9 @@
                         </td>
                     </tr>
                 </tfoot>
-                
                 <!-- List of Threads -->
                 <tbody>
-                    <tr>
-                        <td id="thread_link">
-                            <a href="Threads.php">News Flash: The Patriots still suck!</a>
-                        </td>
-                        <td id="poster_link"><a href="UserProfile.php">Jim Bob V</a></td>
-                        <td>09/28/2017</td>
-                    </tr>
-                    <tr id="even">
-                        <td id="thread_link">
-                            <a href="Threads.php">Kareem Hunt for president???</a>
-                        </td>
-                        <td id="poster_link"><a href="UserProfile.php">Cool Rad Man</a></td>
-                        <td>09/28/2017</td>
-                    </tr>
-                    <tr>
-                        <td id="thread_link">
-                            <a href="Threads.php">Another Thread</a>
-                        </td>
-                        <td id="poster_link"><a href="UserProfile.php">Scooter</a></td>
-                        <td>05/08/2015</td>
-                    </tr>
-                    <tr id="even">
-                        <td id="thread_link">
-                            <a href="Threads.php">Who are you?</a>
-                        </td>
-                        <td id="poster_link"><a href="UserProfile.php">Cool Rad Man</a></td>
-                        <td>09/28/2017</td>
-                    </tr>
+                    <?php echo(getThreadTable()); ?>
                 </tbody>
             </table>
         </div>
@@ -78,6 +54,6 @@
             <input type="button" value="Prev" id="nav_button">
             <input type="button" value="Next" id="nav_button">
         </div>
-        <?php placeFooter(); ?>
+        <?php echo(getFooter()); ?>
     </body>
 </html>

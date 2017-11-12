@@ -1,5 +1,5 @@
 <?php
-    require 'MenuTemplate.php';
+    require '../Controller/MenuTemplateController.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@
     	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
     </head>
     <body>
-        <?php fillMenu(); ?>
+        <?php echo(getUnregisteredNavbar()); ?>
         <div class="profile">
             <div class="top">
                 <div class="picture">
@@ -31,6 +31,6 @@
                 <textarea readonly>I love CS372 & fantasy football!</textarea>
             </div>
         </div>
-        <?php placeFooter(); ?>
+        <?php echo(getFooter()); ?>
     </body>
 </html>

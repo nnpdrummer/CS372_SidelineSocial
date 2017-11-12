@@ -1,5 +1,5 @@
 <?php
-    require 'MenuTemplate.php';
+    require '../Controller/MenuTemplateController.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +9,7 @@
     	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
     </head>
     <body>
-        <?php fillMenu(); ?>
+        <?php echo(getUnregisteredNavbar()); ?>
     	<h1>You have successfully logged out of your account.</h1>
     	<h2>Please click 
     	    <a href="Main.php">here</a>
@@ -19,5 +19,6 @@
                 window.location='Main.php'
             }, 5000);
         </script>
+        <?php echo(getFooter()); ?>
     </body>
 </html>

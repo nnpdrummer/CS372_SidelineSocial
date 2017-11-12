@@ -1,5 +1,6 @@
 <?php
-    require 'MenuTemplate.php';
+    require '../Controller/MenuTemplateController.php';
+    require '../Controller/MainController.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +10,7 @@
 	    <link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
     </head>
     <body>
-        <?php fillMenu(); ?>
+        <?php echo(getUnregisteredNavbar()); ?>
         <h1>Welcome to Sideline Social!</h1>
         <h3>The best fantasy football forum this side of the endzone.</h3>
         <section>
@@ -20,34 +21,8 @@
                             <th id="topic">Discussion Board</th>
                             <th>Latest Post Date</th>
                         </tr>
-                        <tr>
-                            <td>
-                                <a href="Board.php">Main Discussion Board 1</a>
-                                <p>Description of category of threads...</p>
-                            </td>
-                            <td>09/28/2017</td>
-                        </tr>
-                        <tr id="even">
-                            <td>
-                                <a href="Board.php">Main Discussion Board 2</a>
-                                <p>Description of category of threads...</p>
-                            </td>
-                            <td>09/27/2017</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="Board.php">Main Discussion Board 3</a>
-                                <p>Description of category of threads...</p>
-                            </td>
-                            <td>09/08/2017</td>
-                        </tr>
-                        <tr id="even">
-                            <td>
-                                <a href="Board.php">Main Discussion Board 4</a>
-                                <p>Description of category of threads...</p>
-                            </td>
-                            <td>08/23/2017</td>
-                        </tr>
+                        <!-- Builds the table of boards -->
+                        <?php echo(getBoardList()); ?>
                     </tbody>
                 </table>
             </div>
@@ -60,6 +35,6 @@
                 </ul>
             </aside>
         </section>
-        <?php placeFooter(); ?>
+        <?php echo(getFooter()); ?>
     </body>
 </html>

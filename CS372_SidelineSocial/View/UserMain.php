@@ -1,5 +1,5 @@
 <?php
-    require '../Menu.php';
+    require '../Controller/MenuTemplateController.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 	    <script src="../Javascript/Menu.js"></script>
     </head>
     <body>
-        <?php fillMenuLoggedIn(); ?>
+        <?php echo(getRegisteredNavbar()); ?>
         <h1>Welcome to Sideline Social!</h1>
         <h3>The best fantasy football forum this side of the endzone.</h3>
         <section>
@@ -61,6 +61,6 @@
                 </ul>
             </aside>
         </section>
-        <?php placeFooter(); ?>
+        <?php echo(getFooter()); ?>
     </body>
 </html>

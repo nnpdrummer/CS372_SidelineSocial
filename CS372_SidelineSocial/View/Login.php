@@ -1,6 +1,6 @@
 <?php
     require '../Model/DBConnect.php';
-    require 'MenuTemplate.php';
+    require '../Controller/MenuTemplateController.php';
     
     if (isset($_POST["username"])) {
         $username = $connection->real_escape_string($_POST["username"]);
@@ -24,7 +24,7 @@
     	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
     </head>
     <body>
-        <?php fillMenu(); ?>
+        <?php echo(getUnregisteredNavbar()); ?>
     	<h1>Login to your account:</h1>
     	<h2>Don't have an account? Sign up for a new account 
     	    <a href="Register.php">here</a>!</h2>
@@ -45,6 +45,6 @@
     	        </div>
     	    </form>
     	</div>
-    	<?php placeFooter(); ?>
+    	<?php echo(getFooter()); ?>
     </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
     function fillMenu() {
-        echo(
+        $navbar =
         "<div class='navbar'>
             <h1 class='banner'></h1>
             <ul class='menu'>
@@ -10,12 +10,13 @@
                 <li class='login'><a href='Login.php'>Login</a></li>
                 <li class='register'><a href='Register.php'>Register</a></li>
             </ul>
-        </div>"
-        );
+        </div>";
+        
+        return $navbar;
     }
     
     function fillMenuLoggedIn() {
-        echo(
+        $navbar =
         "<div class='navbar'>
             <h1 class='banner'></h1>
             <ul class='menu'>
@@ -35,13 +36,12 @@
                     </div>
                 </li>
             </ul>
-        </div>"
-        );
+        </div>";
+        return $navbar;
     }
     
     function placeFooter() {
-        echo(
-            "<footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>"    
-        );
+        $footer = "<footer>Created by Benjamin Schmidt & Christopher Hier. Copyright 2017. All rights reserved.</footer>";
+        return $footer;
     }
 ?>
