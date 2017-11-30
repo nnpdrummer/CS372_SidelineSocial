@@ -43,8 +43,8 @@ h1{
 }
 
 #new_post_button:hover, #nav_button:hover, #post_button:hover,#new_post_button_content:hover{
-    transition: .5s;
-    background-color: #e2ffe6;
+    background-color: #c7f9ce;
+     border: solid thin black;
 }
 
 /*
@@ -127,7 +127,6 @@ h3{
 }
 
 .post_content_space:hover, .first_post_header:hover, .other_post_header:hover{
-    transition: .5s;
     background-color: white;
 }
 
@@ -194,7 +193,7 @@ label{
     width: 99%;
     height: 100px;
     resize: none;
-    border: thin solid #fccccc;
+    border: thin solid gray;
 }
 
 #reply_post:focus{
@@ -207,7 +206,7 @@ label{
     margin-right: 10px;
     padding: 10px 50px;
     font-size: large;
-    border: thin solid #fccccc;
+    border: thin solid gray;
     background-color: #ffefed;
     cursor: pointer;
     float: right;

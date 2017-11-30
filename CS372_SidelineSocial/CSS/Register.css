@@ -63,12 +63,12 @@ label {
     margin-top: 5px;
     padding: 10px 50px;
     font-size: large;
-    border: thin solid #fccccc;
+    border: thin solid gray;
     background-color: #ffefed;
     cursor: pointer;
 }
     	    
 .submit:hover {
-    transition: .5s;
-    background-color: #e2ffe6;
+    background-color: #c7f9ce;
+    border: solid thin black;
 }

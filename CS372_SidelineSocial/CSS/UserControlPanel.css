@@ -79,8 +79,7 @@ input[type="button"]{
 }
 
 input[type="button"]:hover, input[type="file"]:hover, #saveChanges:hover{
-    transition: .5s;
-    background-color: #e2ffe6;
+    background-color: #c7f9ce;
 }
 
 textarea:focus, input[type="password"]:focus{

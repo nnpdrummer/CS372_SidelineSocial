@@ -57,8 +57,7 @@ tr{
 }
 
 tr:hover, #even:hover{
-    transition: .5s;
-    background-color:#e2ffe6;
+    background-color:#c7f9ce;
 }
 
 #even{
@@ -89,7 +88,7 @@ td{
     float: right;
     padding: 10px 50px;
     font-size: large;
-    border: thin solid #fccccc;
+    border: thin solid gray;
     background-color: #ffefed;
     cursor: pointer;
 }
@@ -105,8 +104,8 @@ td{
 }
 
 #new_thread_button:hover, #nav_button:hover, #post_button:hover{
-    transition: .5s;
-    background-color: #e2ffe6;
+    background-color: #c7f9ce;
+    border: solid thin black;
 }
 
 #thread_link a{
@@ -186,7 +185,7 @@ label{
     width: 99%;
     height: 100px;
     resize: none;
-    border: solid thin #fccccc;
+    border: solid thin gray;
 }
 
 #thread_title:focus{
@@ -207,7 +206,7 @@ label{
     margin-bottom: 5px;
     padding: 10px 50px;
     font-size: large;
-    border: thin solid #fccccc;
+    border: thin solid gray;
     background-color: #ffefed;
     cursor: pointer;
     float: right;
