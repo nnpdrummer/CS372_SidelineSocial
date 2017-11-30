@@ -68,4 +68,7 @@ function buildOtherPostsTable(){
     return $otherPosts;
 }
 
+//add a function to insert post data into the db.
+
+
 ?>

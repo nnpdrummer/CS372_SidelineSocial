@@ -17,4 +17,6 @@ function getOtherPosts(){
     return buildOtherPostsTable();
 }
 
+//add function to pass post data to the model.
+
 ?>

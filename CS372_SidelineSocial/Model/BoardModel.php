@@ -51,4 +51,15 @@ function buildThreadTable(){
     return $table;
 }
 
+function createThreadInDB($threadTitle, $postContent){
+    //get username
+    //get the current date
+    //get category number from url
+    
+    //insert new thread in threads table
+    //insert new post into posts table
+    
+    //close connection
+}
+
 ?>

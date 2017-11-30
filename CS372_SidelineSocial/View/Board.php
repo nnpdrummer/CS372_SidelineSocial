@@ -4,6 +4,12 @@
     session_start();
     
     createBoardInfo();
+    
+    function createThread(){
+        //ensure input
+        createThreadController();
+        //redirect to newly created thread
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +18,6 @@
         <title>Boards</title>
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Board.css" />
         <link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
-        <script src="../Javascript/Board.js"></script>
     </head>
     <body>
         <?php 
@@ -42,7 +47,7 @@
                     <tr>
                         <td class="table_footer" colspan="3">
                              <a href="#create_thread">
-                                <input type="button" value="+ Create New Thread" id="new_thread_button" onclick="revealNewThreadGUI();">
+                                <input type="button" value="+ Create New Thread" id="new_thread_button">
                             </a>
                         </td>
                     </tr>
@@ -61,5 +66,8 @@
             <input type="button" value="Next" id="nav_button">
         </div>
         <?php echo(getFooter()); ?>
+        
+        <!-- import js here -->
+        <script src="../Javascript/Board.js"></script>
     </body>
 </html>

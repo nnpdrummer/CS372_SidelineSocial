@@ -18,6 +18,13 @@
             else {
                 echo(getUnregisteredNavbar()); 
             }
+            
+            if ($_GET["del"] == 2) {
+                echo("<div><h2>Your account has been deleted successfully!</h2></div>");
+            }
+            else if ($_GET["del"] == 1) {
+                echo("<div><h2>Could not delete your account!</h2></div>");
+            }
         ?>
         
         <h1>Welcome to Sideline Social!</h1>

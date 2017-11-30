@@ -1,6 +1,16 @@
 <?php
     require '../Controller/MenuTemplateController.php';
     session_start();
+    
+    $connection = connectToDB();
+    
+    $username = $_GET['user'];
+    
+    $query = "SELECT * FROM users WHERE username = '$username'";
+    $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+    if ($row == null) {
+         $error = true;
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,20 +34,58 @@
         <div class="profile">
             <div class="top">
                 <div class="picture">
-                    <img id="avatar" src="../Images/user.ico" alt="Avatar Picture">
+                    <?php
+                        if ($error || $row['avatar'] == null) {
+                            echo("<img id='avatar' src='../Images/user.ico' alt='Avatar Picture'>");
+                        }
+                        else {
+                            echo("<img id='avatar' src='../Controller/AvatarController.php?user=" . $username . "' alt='Avatar Picture'>");
+                        }
+                    ?>
                 </div>
                 <div class="userinfo">
                     <label>Username: </label>
-                    <input id="username" type="text" readonly value="FanFootballLuver"/><br />
+                    <?php
+                        if ($error) {
+                            echo("<input id='username' type='text' readonly value='Username not found!' />");
+                        }
+                        else {
+                            echo("<input id='username' type='text' readonly value='" . $row['username'] . "' />");
+                        }
+                    ?>
+                    <br />
                     <label>User Type: </label>
-                    <input id="usertype" type="text" readonly value="General User" /> <br />
+                    <?php
+                        if ($error || $row['usertype'] == 0) {
+                            echo("<input id='usertype' type='text' readonly value='General User' />");
+                        }
+                        else {
+                            echo("<input id='usertype' type='text' readonly value='Admin User' />");
+                        }
+                    ?>
+                    <br />
                     <label>Join Date: </label>
-                    <input id="date" type="text" readonly value="October 18, 2017" />
+                    <?php
+                        if ($error) {
+                            echo("<input id='date' type='date' readonly value=' ' />");
+                        }
+                        else {
+                            $date=date_create($row['joindate']);
+                            echo("<input id='date' type='date' readonly value='" . date_format($date, "F jS, Y") . "' />");
+                        }
+                    ?>
                 </div>
             </div>
             <div class="bio">
                 <h1>About Me</h1>
-                <textarea readonly>I love CS372 & fantasy football!</textarea>
+                <?php
+                    if ($error || $row['bio'] == null) {
+                        echo("<textarea readonly></textarea>");
+                    }
+                    else {
+                        echo("<textarea readonly>" . $row['bio'] . "</textarea>");
+                    }
+                ?>
             </div>
         </div>
         <?php echo(getFooter()); ?>

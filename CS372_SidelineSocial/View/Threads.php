@@ -4,6 +4,8 @@
     session_start();
     
     createThreadInfo();
+    
+    //add a function to call a function in the controller to create a new post.
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +13,7 @@
         <title>Threads</title>
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Threads.css" />
 		<link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
-		<script src="../Javascript/Threads.js"></script>
+		
     </head>
     <body>
 	    <?php 
@@ -25,7 +27,7 @@
     <div class="thread_title">
         <h1><?php echo(getThreadTitle()); ?></h1>
         <a href="#create_post">
-            <input type="button" value="+ Create New Post" id="new_post_button" onclick="revealNewPostGUI();"/>
+            <input type="button" value="+ Create New Post" id="new_post_button"/>
         </a>
     </div>
     
@@ -47,5 +49,8 @@
         <input type="button" value="Next" id="nav_button">
     </div>
     <?php echo(getFooter()); ?>
+    
+    <!-- import js here -->
+    <script src="../Javascript/Threads.js"></script>
     </body>
 </html>

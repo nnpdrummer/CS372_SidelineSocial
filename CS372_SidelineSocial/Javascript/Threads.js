@@ -1,5 +1,5 @@
 
-function revealNewPostGUI(){
+var revealNewPostGUI = function(){
     var createpost = document.getElementById("create_post");
     var createpostbtn = document.getElementById("new_post_button");
     createpost.style.visibility = "visible";
@@ -8,3 +8,7 @@ function revealNewPostGUI(){
     createpostbtn.id = "disabled_button";
     createpostbtn.disabled = true;
 }
+
+//add client side input validation
+
+document.getElementById('new_post_button').addEventListener('click', revealNewPostGUI, false);

@@ -38,11 +38,11 @@
                 <li class='search_bar'><input class='search' type='text' placeholder='Search...' /></li>
                 <li class='search_icon'><button type='submit' class='searchButton'></button></li>
                 <li class='account_name'>
-                    <button onclick='showMenu()' class='account_button'>" .
+                    <button class='account_button'>" .
                     $username
                     . "</button>
                     <div id='dropdown' class='account_menu'>
-                        <a href='UserProfile.php'>View Profile</a>
+                        <a href='UserProfile.php?user=" . $username . "'>View Profile</a>
                         <br />
                         <a href='UserControlPanel.php'>Edit Profile</a>"; 
                         
