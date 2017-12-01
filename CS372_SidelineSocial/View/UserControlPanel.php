@@ -33,11 +33,14 @@
         }
     }
     
-    if (isset($_POST["profilePic"]) && $_POST["profilePic"] != "") {
-        $avatar = $_POST["profilePic"];
+    $file = $_FILES['profilePic']['tmp_name'];
+    if ($file != null) {
         $bio = $connection->real_escape_string($_POST["bio"]);
-        $query = "UPDATE users SET avatar = '$avatar', bio = '$bio' WHERE username = '$username'";
-        if (mysqli_query($connection, $query)) {
+        $query = $connection->prepare("UPDATE users SET avatar = ?, bio = '$bio' WHERE username = '$username'");
+        $null = null;
+        $query->bind_param("b", $null);
+        $query->send_long_data(0, file_get_contents($file));
+        if ($query->execute()) {
             $profileupdate = true;
         }
         else {
@@ -107,7 +110,7 @@
                         $profileUpdate = false;
                     }
                 ?>
-                <form action="" method ="post" id="accountForm" onsubmit="return validate();">
+                <form action="" method ="post" id="accountForm" onsubmit="return validate();" enctype="multipart/form-data">
                     <div class="account_settings">
                         <h2>Account Settings</h2>
                         <label for="oldPwd">Old Password:</label><br/>
@@ -121,14 +124,7 @@
                         <p id="confirmPwdError"></p>
                         <fieldset>
                             <legend>Change Avatar</legend>
-                            <?php
-                                if (isset($_POST["profilePic"])) {
-                                    echo("<input type='file' name='profilePic' accept='.jpeg, .jpg' value='" . $_POST['profilePic'] . "'>");
-                                }
-                                else {
-                                    echo("<input type='file' name='profilePic' accept='.jpeg, .jpg'>");
-                                }
-                            ?>
+                            <input type='file' name='profilePic' accept='.jpeg, .jpg' />
                             <p id="picError"></p>
                         </fieldset>
                         <fieldset>
