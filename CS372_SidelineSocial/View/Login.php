@@ -23,12 +23,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<title>Please register an account</title>
+    	<title>Sideline Social Login</title>
     	<link rel="stylesheet" type="text/css" href="../CSS/Login.css" />
     	<link rel="stylesheet" type="text/css" href="../CSS/MenuTemplate.css" />
     </head>
     <body>
-        <?php echo(getUnregisteredNavbar()); ?>
+        <?= getUnregisteredNavbar(); ?>
         
     	<h1>Login to your account:</h1>
     	<h2>Don't have an account? Sign up for a new account 
@@ -50,6 +50,6 @@
     	        </div>
     	    </form>
     	</div>
-    	<?php echo(getFooter()); ?>
+    	<?= getFooter(); ?>
     </body>
 </html>

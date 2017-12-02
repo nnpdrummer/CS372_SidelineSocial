@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Boards</title>
+        <title><?= getBoardName(); ?></title>
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Board.css" />
         <link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
     </head>

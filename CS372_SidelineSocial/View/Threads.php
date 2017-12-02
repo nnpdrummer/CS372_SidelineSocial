@@ -19,7 +19,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Threads</title>
+        <title><?= getThreadTitle(); ?></title>
         <link rel = "stylesheet" type = "text/css" href = "../CSS/Threads.css" />
 		<link rel = "stylesheet" type = "text/css" href = "../CSS/MenuTemplate.css" />
 		

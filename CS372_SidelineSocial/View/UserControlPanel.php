@@ -9,6 +9,7 @@
     
     $query = "SELECT * FROM users WHERE username = '$username'";
     $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
+    $username = $row['username'];
     $passerror = false;
     $passchange = false;
     $miscerror = false;
@@ -74,7 +75,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>USERNAME Control Panel</title>
+        <title><?= $username; ?>'s Control Panel</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../CSS/UserControlPanel.css" />
@@ -82,7 +83,7 @@
     	<script src="../Javascript/UserControlPanel.js"></script>
     </head>
     <body>
-        <?php echo(getRegisteredNavbar()); ?>
+        <?= getRegisteredNavbar(); ?>
         
         <div class="header">
             <h1>User Control Panel</h1>
@@ -150,6 +151,6 @@
                 </form>
             </div>
         </div>
-        <?php echo(getFooter()); ?>
+        <?= getFooter(); ?>
     </body>
 </html>
