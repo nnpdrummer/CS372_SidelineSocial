@@ -5,9 +5,15 @@
     
     createBoardInfo();
     
-    /*if(isset($_POST["#post_button"])){
-        createThreadController();
-    }*/
+    if(isset($_POST["post_button"])){
+        if(empty($_POST['thread_title']) || empty($_POST['post_content'])){
+            echo "<script>alert('Thread Title or Post Content is missing.')</script>";
+        }
+        else{
+            $location = createThreadController();
+            header('Location: Threads.php?threadid=' . $location);
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +35,7 @@
         
         <!-- Title of Board -->
         <div class="board_title">
-            <h1><?php echo(getBoardName()); ?></h1>
+            <h1><?= getBoardName(); ?></h1>
         </div>
         <!-- Main Content -->
         <div class="main_content">
@@ -44,29 +50,37 @@
                 <tfoot>
                     <tr>
                         <td class="table_footer" colspan="3">
-                             <a href="#create_thread">
-                                <input type="button" value="+ Create New Thread" id="new_thread_button">
+                            <a href="#create_thread">
+                                <input type="button" value="+ Create New Thread" 
+                                <?php 
+                                    if(isset($_COOKIE['username'])){
+                                        echo 'id="new_thread_button">';
+                                    }
+                                    else{
+                                        echo 'id="disabled_button" disabled>';
+                                    }
+                                ?>
                             </a>
                         </td>
                     </tr>
                 </tfoot>
                 <!-- List of Threads -->
                 <tbody>
-                    <?php echo(getThreadTable()); ?>
+                    <?= getThreadTable(); ?>
                 </tbody>
             </table>
         </div>
-        <div class="create_thread" id="create_thread">
-            
-        </div>
+        <!-- Create New Thread Panel -->
+        <form id="makeThread" action="Board.php?categorynumber=<?= $_GET['categorynumber']; ?>" method="post" onsubmit="return validateThreadCreation();">
+            <div class="create_thread" id="create_thread"></div>
+        </form>
         <div class="Page_Navigation">
             <input type="button" value="Prev" id="nav_button">
             <input type="button" value="Next" id="nav_button">
         </div>
-        <?php echo(getFooter()); ?>
+        <?= getFooter(); ?>
         
         <!-- import js here -->
-        <script src="jquery-3.2.1.min.js"></script>
         <script src="../Javascript/Board.js"></script>
     </body>
 </html>

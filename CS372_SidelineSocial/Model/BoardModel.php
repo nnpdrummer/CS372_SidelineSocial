@@ -2,22 +2,36 @@
 require_once 'DBConnect.php';
 
 $boardName = "";
+$boardID = 1; 
 $boardInfo = array();
 
-function parseThreadInfo(){
-    global $boardName, $boardInfo;
+function parseThreadInfo($rawCatNum){
+    global $boardName, $boardInfo, $boardID;
     $connection = connectToDB();
-    $categorynumber = $connection->real_escape_string($_GET['categorynumber']);
+    $categorynumber = $connection->real_escape_string($rawCatNum);
     
     $sql = sprintf("SELECT categoryname, threadid, threadname, op, DATE_FORMAT(t.latestupdate,'%%b %%e %%Y %%r') as formatDate FROM threads t INNER JOIN boards b WHERE t.categorynumber = '%s' and b.categorynumber = '%s' ORDER BY t.latestupdate DESC", $categorynumber, $categorynumber);
     $result = $connection->query($sql);
-    $connection->close();
     
     if($result->num_rows > 0){
+        $connection->close();
         
         while($row = $result->fetch_assoc()){
             $boardName = $row["categoryname"];
             array_push($boardInfo, array('threadid' => $row["threadid"], 'threadname' => $row["threadname"], 'op' => $row["op"], 'date' => $row["formatDate"]));
+        }
+    }
+    else{
+        $sql = sprintf("SELECT categoryname FROM boards WHERE categorynumber = '%s'", $categorynumber);
+        $result = $connection->query($sql);
+        $connection->close();
+        
+        if($result->num_rows <= 0){
+            header("Location: Main.php");
+        }
+        else{
+            $row = $result->fetch_assoc();
+            $boardName = $row["categoryname"];
         }
     }
 }
@@ -44,30 +58,32 @@ function buildThreadTable(){
             }
             
             $table .= "><td id='thread_link'><a href='Threads.php?threadid=" . $boardInfo[$rowNum]['threadid'] . "'>". $boardInfo[$rowNum]["threadname"] . "</a></td>" .
-                        "<td id='poster_link'><a href='UserProfile.php'>" . $boardInfo[$rowNum]['op'] . "</a></td>" .
+                        "<td id='poster_link'><a href='UserProfile.php?user=". $boardInfo[$rowNum]['op'] ."'>" . $boardInfo[$rowNum]['op'] . "</a></td>" .
                         "<td>" . $boardInfo[$rowNum]['date'] . "</td></tr>";
         }
     }
     return $table;
 }
 
-function createThreadInDB($rawThreadTitle, $rawPostContent){
+function createThreadInDB($rawThreadTitle, $rawUsername, $rawDate, $rawCatNum, $rawPostContent){
     $connection = connectToDB();
     
-    $username = $connection->real_escape_string($_COOKIE['username']);
-    $date = $connection->real_escape_string(date("Y-m-d H:i:s"));
-    $catNum = $connection->real_escape_string($_GET['categorynumber']);
     $threadTitle = $connection->real_escape_string($rawThreadTitle);
-    $threadid = '';
+    $username = $connection->real_escape_string($rawUsername);
+    $date = $connection->real_escape_string($rawDate);
+    $catNum = $connection->real_escape_string($rawCatNum);
     $postContent = $connection->real_escape_string($rawPostContent);
     
     $sql = sprintf("INSERT INTO threads (threadname, op, latestupdate, categorynumber) VALUES ('%s','%s','%s','%s')", $threadTitle, $username, $date, $catNum);
+    $connection->query($sql);
+    $sql = sprintf("SELECT threadid FROM threads WHERE threadname = '%s' AND op = '%s' AND latestupdate = '%s'", $threadTitle, $username, $date);//Get the appropriate threadid so we can insert the post content
     $result = $connection->query($sql);
-    $sql = sprintf("SELECT threadid FROM threads WHERE latestupdate = '%s' AND threadname = '%s' AND op = '%s'", $date, $threadTitle, $username);//Get the appropriate threadid so we can insert the post content
-    $result = $connection->query($sql);
-    $threadid = $connection->real_escape_string($result);
+    $row = $result->fetch_assoc();
+    $threadid = $connection->real_escape_string($row["threadid"]);
     $sql = sprintf("INSERT INTO posts (threadid, username, content, postdate) VALUES ('%s','%s','%s','%s')", $threadid, $username, $postContent, $date);
-    $result = $connection->query($sql);
+    $connection->query($sql);
     $connection->close();
+    
+    return $threadid;
 }
 ?>

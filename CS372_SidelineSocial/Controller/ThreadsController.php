@@ -2,7 +2,7 @@
 require '../Model/ThreadsModel.php';
 
 function createThreadInfo(){
-    parseThreadInfo();
+    parseThreadInfo($_GET['threadid']);
 }
 
 function getThreadTitle(){
@@ -17,6 +17,7 @@ function getOtherPosts(){
     return buildOtherPostsTable();
 }
 
-//add function to pass post data to the model.
-
+function createPostController(){
+    return createPostInDB($_GET['threadid'], $_COOKIE['username'], $_POST['reply_post'], date("Y-m-d H:i:s"));
+}
 ?>

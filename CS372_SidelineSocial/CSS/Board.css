@@ -97,7 +97,7 @@ td{
     float: right;
     padding: 10px 50px;
     font-size: large;
-    border: thin solid #fccccc;
+    border: thin solid gray;
     background-color: #ffefed;
     cursor: pointer;
     cursor: default;

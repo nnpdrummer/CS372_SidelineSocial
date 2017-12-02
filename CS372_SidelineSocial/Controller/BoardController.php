@@ -2,7 +2,7 @@
 require '../Model/BoardModel.php';
 
 function createBoardInfo(){
-    parseThreadInfo();
+    parseThreadInfo($_GET['categorynumber']);
 }
 
 function getBoardName(){
@@ -14,9 +14,7 @@ function getThreadTable(){
 }
 
 function createThreadController(){
-    $location = createThreadInDB($_POST['thread_title'], $_POST['post_content']);
+    return createThreadInDB($_POST['thread_title'], $_COOKIE['username'], date("Y-m-d H:i:s"), $_GET['categorynumber'], $_POST['post_content']);
 }
-
-//ensure input function
 
 ?>

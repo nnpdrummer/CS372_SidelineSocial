@@ -5,7 +5,16 @@
     
     createThreadInfo();
     
-    //add a function to call a function in the controller to create a new post.
+    if(isset($_POST["post_button"])){
+        if(empty($_POST['reply_post'])){
+            echo "<script>alert('Post Content is missing.')</script>";
+        }
+        else{
+            echo "<script>alert('We got here')</script>";
+            $location = createPostController();
+            header('Location: Threads.php?threadid=' . $location);
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +34,7 @@
             }
         ?>
     <div class="thread_title">
-        <h1><?php echo(getThreadTitle()); ?></h1>
+        <h1><?= getThreadTitle(); ?></h1>
         <a href="#create_post">
             <input type="button" value="+ Create New Post" id="new_post_button"/>
         </a>
@@ -34,21 +43,22 @@
     <!-- First Post Content-->
     
     <div class="main_content">
-        <?php echo(getFirstPost()); ?>
+        <?= getFirstPost(); ?>
     </div>
     <!-- Other posts content -->
     
     <ul class="other_posts">
-        <?php echo(getOtherPosts()); ?>
+        <?= getOtherPosts(); ?>
     </ul>
-    <div class="create_post" id="create_post">
-    </div>
+    <form id="makePost" action="Threads.php?threadid=<?= $_GET['threadid']; ?>" method="post" onsubmit="return validatePostCreation();">
+        <div class="create_post" id="create_post"></div>
+    </form>
     
     <div class="Page_Navigation">
         <input type="button" value="Prev" id="nav_button">
         <input type="button" value="Next" id="nav_button">
     </div>
-    <?php echo(getFooter()); ?>
+    <?= getFooter(); ?>
     
     <!-- import js here -->
     <script src="../Javascript/Threads.js"></script>
