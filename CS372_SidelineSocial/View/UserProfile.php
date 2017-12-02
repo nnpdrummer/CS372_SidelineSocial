@@ -75,10 +75,10 @@
                     <label>Join Date: </label>
                     <?php
                         if ($error) {
-                            echo("<input id='date' type='date' readonly value=' ' />");
+                            echo("<input id='date' type='text' readonly value=' ' />");
                         }
                         else {
-                            echo("<input id='date' type='date' readonly value='". $row['fDate'] . "' />");
+                            echo("<input id='date' type='text' readonly value='". $row['fDate'] . "' />");
                         }
                     ?>
                 </div>

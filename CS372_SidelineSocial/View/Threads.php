@@ -35,10 +35,11 @@
         ?>
     <div class="thread_title">
         <h1><?= getThreadTitle(); ?></h1>
-        <a href="#create_post">
+        
+    </div>
+    <a href="#create_post">
             <input type="button" value="+ Create New Post" id="new_post_button"/>
         </a>
-    </div>
     
     <!-- First Post Content-->
     
