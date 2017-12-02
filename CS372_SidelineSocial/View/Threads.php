@@ -38,7 +38,15 @@
         
     </div>
     <a href="#create_post">
-            <input type="button" value="+ Create New Post" id="new_post_button"/>
+            <input type="button" value="+ Create New Post"
+            <?php 
+                if(isset($_COOKIE['username'])){
+                    echo 'id="new_post_button">';
+                }
+                else{
+                    echo 'id="disabled_button" disabled>';
+                }
+            ?>
         </a>
     
     <!-- First Post Content-->
