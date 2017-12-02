@@ -5,11 +5,9 @@
     
     createBoardInfo();
     
-    function createThread(){
-        //ensure input
+    /*if(isset($_POST["#post_button"])){
         createThreadController();
-        //redirect to newly created thread
-    } 
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +66,7 @@
         <?php echo(getFooter()); ?>
         
         <!-- import js here -->
+        <script src="jquery-3.2.1.min.js"></script>
         <script src="../Javascript/Board.js"></script>
     </body>
 </html>

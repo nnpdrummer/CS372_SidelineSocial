@@ -14,7 +14,7 @@ function getThreadTable(){
 }
 
 function createThreadController(){
-    createThreadInDB($_POST['thread_title'],$_POST['post_content']);
+    $location = createThreadInDB($_POST['thread_title'], $_POST['post_content']);
 }
 
 //ensure input function

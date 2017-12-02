@@ -51,15 +51,23 @@ function buildThreadTable(){
     return $table;
 }
 
-function createThreadInDB($threadTitle, $postContent){
-    //get username
-    //get the current date
-    //get category number from url
+function createThreadInDB($rawThreadTitle, $rawPostContent){
+    $connection = connectToDB();
     
-    //insert new thread in threads table
-    //insert new post into posts table
+    $username = $connection->real_escape_string($_COOKIE['username']);
+    $date = $connection->real_escape_string(date("Y-m-d H:i:s"));
+    $catNum = $connection->real_escape_string($_GET['categorynumber']);
+    $threadTitle = $connection->real_escape_string($rawThreadTitle);
+    $threadid = '';
+    $postContent = $connection->real_escape_string($rawPostContent);
     
-    //close connection
+    $sql = sprintf("INSERT INTO threads (threadname, op, latestupdate, categorynumber) VALUES ('%s','%s','%s','%s')", $threadTitle, $username, $date, $catNum);
+    $result = $connection->query($sql);
+    $sql = sprintf("SELECT threadid FROM threads WHERE latestupdate = '%s' AND threadname = '%s' AND op = '%s'", $date, $threadTitle, $username);//Get the appropriate threadid so we can insert the post content
+    $result = $connection->query($sql);
+    $threadid = $connection->real_escape_string($result);
+    $sql = sprintf("INSERT INTO posts (threadid, username, content, postdate) VALUES ('%s','%s','%s','%s')", $threadid, $username, $postContent, $date);
+    $result = $connection->query($sql);
+    $connection->close();
 }
-
 ?>
