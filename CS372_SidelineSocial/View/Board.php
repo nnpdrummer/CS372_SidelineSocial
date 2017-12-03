@@ -35,7 +35,7 @@
         
         <!-- Title of Board -->
         <div class="board_title">
-            <h1><?= getBoardName(); ?></h1>
+            <h1 id="boardHeader"><?= getBoardName(); ?></h1>
         </div>
         <!-- Main Content -->
         <div class="main_content">
@@ -74,10 +74,6 @@
         <form id="makeThread" action="Board.php?categorynumber=<?= $_GET['categorynumber']; ?>" method="post" onsubmit="return validateThreadCreation();">
             <div class="create_thread" id="create_thread"></div>
         </form>
-        <div class="Page_Navigation">
-            <input type="button" value="Prev" id="nav_button">
-            <input type="button" value="Next" id="nav_button">
-        </div>
         <?= getFooter(); ?>
         
         <!-- import js here -->

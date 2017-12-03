@@ -20,19 +20,15 @@ function clearErrorMessage(){
 }
 
 function banUser(){
-    with(document.forms.selectUserForm){
-        if(confirm('Are you sure you want to ban this user?')){
-            alert(document.getElementById("username").value + " has been banned!");
-            document.getElementById("username").value = "";
-        }
+    if(confirm('Are you sure you want to ban this user?')){
+        document.getElementById("control").value = "ban";
+        document.forms.selectUserForm.submit();
     }
 }
 
 function promoteUser(){
-    with(document.forms.selectUserForm){
-        if(confirm('Are you sure you want to promote this user?')){
-            alert(document.getElementById("username").value + " has been promoted!");
-            document.getElementById("username").value = "";
-        }
+    if(confirm('Are you sure you want to promote this user?')){
+        document.getElementById("control").value = "promote";
+        document.forms.selectUserForm.submit();
     }
 }

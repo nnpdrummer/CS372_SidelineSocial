@@ -1,25 +1,10 @@
-body{
-    background-color: #dfdfdf;
-    min-width: 800px;
-}
-
+@import url(MasterStyling.css);
 /*
     Title Stuff
 */
 
 .board_title{
-     margin-top: -40px;
-     padding-left: 5%;
-     width: 100%;
-     height: 90px;
      overflow: hidden;
-}
-
-h1{
-   font-size: 300%;
-   padding-bottom: 3%;
-   display: inline-block;
-   width: 500px;
 }
 
 /*

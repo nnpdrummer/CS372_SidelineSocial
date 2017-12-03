@@ -1,0 +1,15 @@
+body{
+    font-family: helvetica;
+    background-color: #dfdfdf;
+    min-width: 800px;
+}
+
+.thread_title, .board_title{
+    margin-top: -40px;
+    padding-left: 5%;
+    margin-bottom: -30px;
+}
+
+#threadHeader, #boardHeader{
+    font-size: 300%;
+}

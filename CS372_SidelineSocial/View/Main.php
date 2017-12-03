@@ -20,10 +20,10 @@
             }
             
             if ($_GET["del"] == 2) {
-                echo("<div><h2>Your account has been deleted successfully!</h2></div>");
+                echo("<div><h2><center><font color=#FF0000>Your account has been deleted successfully!</font></center></h2></div>");
             }
             else if ($_GET["del"] == 1) {
-                echo("<div><h2>Could not delete your account!</h2></div>");
+                echo("<div><h2><center><font color=#FF0000>Could not delete your account!</font></center></h2></div>");
             }
         ?>
         
@@ -45,9 +45,13 @@
             <aside>Site Rules
                 <p>Description of rules & consequences</p>
                 <ul>
-                    <li>Rule 1</li>
-                    <li>Rule 2</li>
-                    <li>Rule 3</li>
+                    <li><strong><u>Rule 1:</u></strong> No hacking and/or trying to crash the site. Don't ruin it for everyone else.</li>
+                    <li><strong><u>Rule 2:</u></strong> No advertising or spamming. Do it somewhere else.</li>
+                    <li><strong><u>Rule 3:</u></strong> No illegal activity! We don't want anyone going to jail.</li>
+                    <li><strong><u>Rule 4:</u></strong> No posting or requesting personal information. Keep it anonymous & fun!</li>
+                    <li><strong><u>Rule 5:</u></strong> No obscene images or links to obscene images. Stay on topic.</li>
+                    <li><strong><u>Rule 6:</u></strong> Respect. Don't bully or discriminate. Why ya wanna hate?</li>
+                    <li><strong><u>Rule 7:</u></strong> Admins have the right to ban any account for violation of rules.</li>
                 </ul>
             </aside>
         </section>

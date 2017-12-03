@@ -109,6 +109,10 @@ aside ul {
     text-align: left;
 }
 
+aside li {
+    text-decoration: normal;
+}
+
 section {
     display: inline-block;
     margin-bottom: 5%;

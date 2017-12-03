@@ -9,11 +9,6 @@
     
     $query = "SELECT * FROM users WHERE username = '$username'";
     $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
-    $username = $row['username'];
-    $passerror = false;
-    $passchange = false;
-    $miscerror = false;
-    $profileUpdate = false;
     
     if (isset($_POST["oldPwd"]) && isset($_POST["newPwd"]) && $_POST["oldPwd"] != "") {
         $oldpass = $connection->real_escape_string($_POST["oldPwd"]);
@@ -90,27 +85,23 @@
             <span id = "first"></span>
             <br />
             <span id = "second"></span>
+            <?php
+                if ($passchange) {
+                    echo("<h2><font color=#FF0000>All was updated successfully!</font></h2>");
+                }
+                else if ($passerror) {
+                    echo("<h2><font color=#FF0000>Wrong password entered!</font></h2>");
+                }
+                else if ($miscerror) {
+                    echo("<h2><font color=#FF0000>Something went wrong!</font></h2>");
+                }
+                else if ($profileupdated) {
+                    echo("<h2><font color=#FF0000>Profile updated successfully!</font></h2>");
+                }
+            ?>
         </div>
         <div class="main_content">
             <div class="settings">
-                <?php
-                    if ($passerror) {
-                        echo("<script>passwordError();</script>");
-                        $passerror = false;
-                    }
-                    else if ($passchange) {
-                        echo("<script>passwordChange();</script>");
-                        $passchange = false;
-                    }
-                    else  if ($miscerror) {
-                        echo("<script>miscError()</script>");
-                        $miscerror = false;
-                    }
-                    else if ($profileupdate) {
-                        echo("<script>profileUpdate()</script>");
-                        $profileUpdate = false;
-                    }
-                ?>
                 <form action="" method ="post" id="accountForm" onsubmit="return validate();" enctype="multipart/form-data">
                     <div class="account_settings">
                         <h2>Account Settings</h2>

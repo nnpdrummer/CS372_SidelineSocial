@@ -34,7 +34,7 @@
             }
         ?>
     <div class="thread_title">
-        <h1><?= getThreadTitle(); ?></h1>
+        <h1 id="threadHeader"><?= getThreadTitle(); ?></h1>
         
     </div>
     <a href="#create_post">
@@ -62,11 +62,6 @@
     <form id="makePost" action="Threads.php?threadid=<?= $_GET['threadid']; ?>" method="post" onsubmit="return validatePostCreation();">
         <div class="create_post" id="create_post"></div>
     </form>
-    
-    <div class="Page_Navigation">
-        <input type="button" value="Prev" id="nav_button">
-        <input type="button" value="Next" id="nav_button">
-    </div>
     <?= getFooter(); ?>
     
     <!-- import js here -->
