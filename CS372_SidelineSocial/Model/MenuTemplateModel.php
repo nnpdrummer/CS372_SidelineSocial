@@ -8,8 +8,9 @@
             <h1 class='banner'></h1>
             <ul class='menu'>
                 <li class='home'><a href='Main.php'>Home</a></li>
-                <li class='search_bar'><input class='search' type='text' placeholder='Search...' /></li>
-                <li class='search_icon'><button type='submit' class='searchButton'></button></li>
+                <li class='search_bar'><form method='get' action='Search.php'>
+                    <input class='search' id='q' name='q' type='text' placeholder='Search...' /></li>
+                <li class='search_icon'><input type='submit' class='searchButton' /></form></li>
                 <li class='login'><a href='Login.php'>Login</a></li>
                 <li class='register'><a href='Register.php'>Register</a></li>
             </ul>
@@ -35,8 +36,9 @@
             <h1 class='banner'></h1>
             <ul class='menu'>
                 <li class='home'><a href='Main.php'>Home</a></li>
-                <li class='search_bar'><input class='search' type='text' placeholder='Search...' /></li>
-                <li class='search_icon'><button type='submit' class='searchButton'></button></li>
+                <li class='search_bar'><form method='get' action='Search.php'>
+                    <input class='search' id='q' name='q' type='text' placeholder='Search...' /></li>
+                <li class='search_icon'><button type='submit' class='searchButton' /></button></li>
                 <li class='account_name'>
                     <button class='account_button'>" .
                     $username

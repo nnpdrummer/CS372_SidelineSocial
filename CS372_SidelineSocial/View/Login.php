@@ -11,7 +11,7 @@
         $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
         if (!$row == null) {
             $_SESSION["authenticated"] = true;
-            successfulLogin($username);
+            successfulLogin($row['username']);
             header( 'Location: Main.php' );
         }
         else {

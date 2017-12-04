@@ -51,7 +51,7 @@
                     <li><strong><u>Rule 4:</u></strong> No posting or requesting personal information. Keep it anonymous & fun!</li>
                     <li><strong><u>Rule 5:</u></strong> No obscene images or links to obscene images. Stay on topic.</li>
                     <li><strong><u>Rule 6:</u></strong> Respect. Don't bully or discriminate. Why ya wanna hate?</li>
-                    <li><strong><u>Rule 7:</u></strong> Admins have the right to ban any account for violation of rules.</li>
+                    <li><strong><u>Rule 7:</u></strong> Admins have the right to ban any account for violation of rules.git</li>
                 </ul>
             </aside>
         </section>
