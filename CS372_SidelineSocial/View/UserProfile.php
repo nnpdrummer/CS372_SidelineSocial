@@ -6,7 +6,7 @@
     
     $username = $_GET['user'];
     
-    $query = "SELECT *, DATE_FORMAT(joindate, '%%M %%D, %%Y') AS fDate FROM users WHERE username = '$username'";
+    $query = "SELECT *, DATE_FORMAT(joindate, '%M %D, %Y') AS fDate FROM users WHERE username = '$username'";
     $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
     if ($row == null) {
          $error = true;

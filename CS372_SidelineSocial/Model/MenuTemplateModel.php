@@ -38,7 +38,7 @@
                 <li class='home'><a href='Main.php'>Home</a></li>
                 <li class='search_bar'><form method='get' action='Search.php'>
                     <input class='search' id='q' name='q' type='text' placeholder='Search...' /></li>
-                <li class='search_icon'><button type='submit' class='searchButton' /></button></li>
+                <li class='search_icon'><button type='submit' class='searchButton' /></button></form></li>
                 <li class='account_name'>
                     <button class='account_button'>" .
                     $username

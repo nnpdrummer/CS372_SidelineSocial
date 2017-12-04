@@ -82,21 +82,18 @@
         
         <div class="header">
             <h1>User Control Panel</h1>
-            <span id = "first"></span>
-            <br />
-            <span id = "second"></span>
             <?php
                 if ($passchange) {
-                    echo("<h2><font color=#FF0000>All was updated successfully!</font></h2>");
+                    echo("<h2 id='status'><font color=#FF0000>All was updated successfully!</font></h2>");
                 }
                 else if ($passerror) {
-                    echo("<h2><font color=#FF0000>Wrong password entered!</font></h2>");
+                    echo("<h2 id='status'><font color=#FF0000>Wrong password entered!</font></h2>");
                 }
                 else if ($miscerror) {
-                    echo("<h2><font color=#FF0000>Something went wrong!</font></h2>");
+                    echo("<h2 id='status'><font color=#FF0000>Something went wrong!</font></h2>");
                 }
-                else if ($profileupdated) {
-                    echo("<h2><font color=#FF0000>Profile updated successfully!</font></h2>");
+                else if ($profileupdate) {
+                    echo("<h2 id='status'><font color=#FF0000>Profile updated successfully!</font></h2>");
                 }
             ?>
         </div>
@@ -106,30 +103,30 @@
                     <div class="account_settings">
                         <h2>Account Settings</h2>
                         <label for="oldPwd">Old Password:</label><br/>
-                        <input type="password" name="oldPwd"><br/>
+                        <input type="password" name="oldPwd" id="oldPwd" /><br />
                         <p id="oldPwdError"></p>
                         <label for="newPwd">New Password:</label><br/>
-                        <input type="password" name="newPwd"><br/>
+                        <input type="password" name="newPwd" id="newPwd" /><br />
                         <p id="newPwdError"></p>
                         <label for="confirmPwd">Confirm Password:</label><br/>
-                        <input type="password" name="confirmPwd"><br/>
+                        <input type="password" name="confirmPwd" id="confirmPwd" /><br />
                         <p id="confirmPwdError"></p>
                         <fieldset>
                             <legend>Change Avatar</legend>
-                            <input type='file' name='profilePic' accept='.jpeg, .jpg' />
+                            <input type='file' name='profilePic' id='profilePic' accept='image/jpeg,image/gif,image/png' />
                             <p id="picError"></p>
                         </fieldset>
                         <fieldset>
                             <legend>Edit Bio</legend>
                             <?php
                                 if (isset($_POST["bio"])) {
-                                    echo("<textarea name='bio'>" . $_POST['bio'] . "</textarea>");
+                                    echo("<textarea name='bio' id='bio'>" . $_POST['bio'] . "</textarea>");
                                 }
                                 else if ($row['bio'] != null) {
-                                    echo("<textarea name='bio'>" . $row['bio'] . "</textarea>");
+                                    echo("<textarea name='bio' ='bio'>" . $row['bio'] . "</textarea>");
                                 }
                                 else {
-                                    echo("<textarea name='bio'></textarea>");
+                                    echo("<textarea name='bio' ='bio'></textarea>");
                                 }
                             ?>
                         </fieldset>

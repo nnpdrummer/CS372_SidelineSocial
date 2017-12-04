@@ -20,6 +20,7 @@ function clearErrorMessages(){
     for(var i = 0; i < list.length; i++){
         list[i].innerHTML = "";
     }
+    document.getElementById("status").innerHTML = "";
 }
 
 function validatePasswords(){
@@ -52,10 +53,12 @@ function deleteAccount(){
 
 function checkFileExtension() {
     var fileName = document.getElementById("profilePic").value;
-    if (fileName.split(".")[1].toUpperCase() == "JPG" || fileName.split(".")[1].toUpperCase() == "JPEG")
+    var extension = fileName.split(".")[1].toUpperCase();
+    if (extension == "JPG" || extension == "JPEG" || extension == "JPE" || extension == "JFIF" || extension == "GIF" || extension == "PNG") {
         return true;
+    }
     else {
-        document.getElementById("picError").innerHTML = "Images can only be of jpeg format!";
+        document.getElementById("picError").innerHTML = "Images can only be of jpeg or gif format!";
         return false;
     }
 }
